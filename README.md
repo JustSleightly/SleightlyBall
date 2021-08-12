@@ -80,7 +80,7 @@ Enable this feature to include three toggles to enable/disable ball collision, b
 <details>
   <summary>Technical Details</summary>
 
-> Enabling World Physics adds to your Gesture Playable layer. If these layers' order is later shifted, you must run VRLabs' [Fix Order](https://github.com/VRLabs/VRChat-Avatars-3.0#fix-order) script to resolve the sub-animator.
+> Enabling World Physics adds to your Gesture Playable layer. If these layers' order is later shifted, you must run VRLabs' Fix Order script to resolve the sub-animator.
 > 
 > Collision is off by default, due to ball collision's ability to affect world triggers (portals, distance-based mirrors, etc).
 > 
@@ -197,40 +197,26 @@ Displays the Necessary Memory to generate and the Available Memory on the curren
 
 Necessary Memory can be calculated as:
 
-$$ Total Necessary Memory = Local Synced Memory + Network Synced Memory $$
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Total%20Necessary%20Memory%20%3D%20Local%20Synced%20Memory%20&plus;%20Network%20Synced%20Memory)
 
 where:
 
-$$ Local Synced Memory = 
-\begin{cases}  
-Local Bools &\text{if } Local Bools < 8 \\
-8 &\text{if } Local Bools \geq 8
-\end{cases}$$
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Local%20Synced%20Memory%20%3D%20%5Cbegin%7Bcases%7D%20%26%20Local%20Bools%20%5Ctext%7B%20if%20%7D%20Local%20Bools%3C%208%20%5C%5C%20%26%208%20%5Ctext%7B%20if%20%7D%20Local%20Bools%20%5Cgeq%208%20%5Cend%7Bcases%7D)
 
-$$ Local Bools = \sum Enabled Local Bools$$
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Network%20Synced%20Memory%20%3D%20%5Csum%20Enabled%20Synced%20Memory)
 
 <details>
 
-> $$\begin{rcases} 3 &\text{if } World Physics 
-> \\ 4 &\text{if } World Constraints 
-> \\ 1 &\text{if } Ball Demo Mode 
-> \\ 1 &\text{if } !(Save Control Mode) \& Simple Control
-> \\ 2 * Ball Count &\text{if } Both Hands
-> \\ 1 * Ball Count &\text{if } Left Handed Only
-> \\ 1 * Ball Count &\text{if } Right Handed Only
-> \end{rcases}⇒\sum Enabled Local Bools$$
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%5Cleft.%5Cbegin%7Bmatrix%7D%203%26%20World%20Physics%5C%5C%204%26%20World%20Constraints%5C%5C%201%26%20Ball%20Demo%20Mode%5C%5C%201%26%20%21%28Save%20Control%20Mode%29%20%5C%26%20Simple%20Control%29%5C%5C%202%20*%20Ball%20Count%26%20Both%20Hands%5C%5C%201%20*%20Ball%20Count%26%20Left%20Handed%20Only%5C%5C%201%20*%20Ball%20Count%26%20Right%20Handed%20Only%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20Enabled%20Local%20Bools)
 </details>
 
 and:
 
-$$ Network Synced Memory = \sum Enabled Synced Memory$$
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Total%20Necessary%20Memory%20%3D%20Local%20Synced%20Memory%20&plus;%20Network%20Synced%20Memory)
 
 <details>
 
-> $$\begin{rcases} 8 &\text{if } Ball Distance
-> \\ 8 &\text{if } Ball Strength
-> \\ 1 &\text{if } Save Control Mode\& Simple Control
-> \end{rcases}⇒\sum Enabled Synced Memory$$
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%5Cleft.%5Cbegin%7Bmatrix%7D%208%20%26%20Ball%20Distance%5C%5C%208%20%26%20Ball%20Strength%5C%5C%201%20%26%20Save%20Control%20Mode%20%5C%26%20Simple%20Control%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20Enabled%20Synced%20Memory)
 </details>
 
 ### Warnings/Errors
