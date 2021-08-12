@@ -1,4 +1,4 @@
-#SleightlyBall
+# SleightlyBall
 
 ![](https://img.shields.io/github/stars/justsleightly/sleightlyball) ![](https://img.shields.io/github/tag/justsleightly/sleightlyball) ![](https://img.shields.io/github/release/justsleightly/sleightlyball) ![](https://img.shields.io/github/issues/justsleightly/sleightlyball)
 
@@ -6,44 +6,44 @@
 
 [TOC]
 
-#Information
+# Information
 
-#Instructions
+# Instructions
 
-##Ball Setup
+## Ball Setup
 
-###Ball Configuration
+### Ball Configuration
 
-###Separate Balls Per Hand
+### Separate Balls Per Hand
 
-###Ball Inputs
+### Ball Inputs
 
-##Additional Features
+## Additional Features
 
-###Ball Distance
+### Ball Distance
 
-###Ball Strength
+### Ball Strength
 
-###World Constraints
+### World Constraints
 
-###World Physics
+### World Physics
 
-##Advanced Options
+## Advanced Options
 
-###Simple Control
+### Simple Control
 
-####Default Control Mode
+#### Default Control Mode
 
-####Save Control Mode
+#### Save Control Mode
 
-###Disable Facial Anims
+### Disable Facial Anims
 
-###Force Gesture Tracking
+### Force Gesture Tracking
 
-###Ball Demo Mode
+### Ball Demo Mode
 
-###Write Defaults
+### Write Defaults
 
-###Remap Control Gestures
+### Remap Control Gestures
 
-##Technical Details
+## Technical Details
