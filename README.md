@@ -24,25 +24,19 @@ To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into th
 </details>
 
 ## Main Settings
-
-### Ball Setup
-
-#### Ball Configuration 
 <details>
-  <summary> </summary>
+  <summary> Ball Setup </summary>
 
 ######
+### Ball Configuration
 Select the Hand Configuration to set up the SleightlyBall system
 |  |  |
 | :------------- | :------------------------------ |
 | `Both Hands` | Ball Inputs Applied to Both Hands |
 | `Left Handed Only` | Ball Inputs Applied to Left Hand Only |
 | `Right Handed Only` | Ball Inputs Applied to Right Hand Only |
-</details>
 
-#### Separate Balls Per Hand
-<details>
-  <summary> </summary>
+### Separate Balls Per Hand
 
 ######
 Select whether to configure each hand independently or identically
@@ -61,11 +55,7 @@ This option is only visible if **Ball Configuration** is set to `Both Hands`
 Enabling this option also allows for independent scaling of each hands' balls and colliders during **Anchor Positioning**
 </details></blockquote>
 
-</details>
-
-#### Ball Inputs
-<details>
-  <summary> </summary>
+### Ball Inputs
 
 ######
 Use the +/- symbol to add/remove additional balls to the system, up to 8 balls. Drag in any GameObject/Prefab from your hierarchy or your project assets. Rearrange them by click/dragging into your preferred order.
