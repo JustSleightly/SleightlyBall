@@ -2,10 +2,6 @@
 
 ![](https://img.shields.io/github/stars/justsleightly/sleightlyball) ![](https://img.shields.io/github/tag/justsleightly/sleightlyball) ![](https://img.shields.io/github/release/justsleightly/sleightlyball) ![](https://img.shields.io/github/issues/justsleightly/sleightlyball)
 
-[TOCM]
-
-[TOC]
-
 # Information
 
 # Instructions
