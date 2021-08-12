@@ -11,7 +11,7 @@
 <details>
   <summary> </summary>
 
-####
+######
 Import the SleightlyBall unitypackage into your project, and click on the SleightlyBall.prefab at the default path *Assets/JustSleightly/SleightlyBall*. If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in Discord.
 </details>
 
@@ -19,7 +19,7 @@ Import the SleightlyBall unitypackage into your project, and click on the Sleigh
 <details>
   <summary> </summary>
 
-####
+######
 To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into the scene for Unity base scaling, then drag it onto your desired avatar. Once the prefab detects an Avatar Descriptor and Animator, the **Main Settings** will appear in the inspector.
 </details>
 
@@ -32,6 +32,7 @@ To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into th
   <summary> </summary>
 
 ######
+Select the Hand Configuration to set up the SleightlyBall system
 |  |  |
 | :------------- | :------------------------------ |
 | `Both Hands` | Ball Inputs Applied to Both Hands |
@@ -44,10 +45,22 @@ To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into th
   <summary> </summary>
 
 ######
+Select whether to configure each hand independently or identically
 |  |  |
 | :------------- | :------------------------------ |
 | `Disabled` | Each Ball Input Applies to Both Hands |
 | `Enabled` | Input a Ball for Each Hand |
+
+#####
+<blockquote><details>
+  <summary>Technical Details</summary>
+
+######
+This option is only visible if **Ball Configuration** is set to `Both Hands`
+
+Enabling this option also allows for independent scaling of each hands' balls and colliders during **Anchor Positioning**
+</details></blockquote>
+
 </details>
 
 #### Ball Inputs
@@ -76,13 +89,13 @@ Leaving an input field blank will yield a Warning. You may continue with blank f
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to include a radial puppet that adjusts the distance of the hand and head ball anchors from you by a local scale of 1 - 10x. 
 
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
  Adds one dedicated float (8 memory) to your expression parameters.
 </details></blockquote>
 
@@ -92,13 +105,13 @@ Enable this feature to include a radial puppet that adjusts the distance of the 
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to include a radial puppet that adjusts the strength at which the ball is attracted to its anchors. 
 
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
 Adds one dedicated float (8 memory) to your expression parameters.
 </details></blockquote>
 
@@ -108,13 +121,13 @@ Adds one dedicated float (8 memory) to your expression parameters.
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to include four toggles to world constrain your hands, head, or chest anchors independently, allowing you to pass the balls between your body and fixed points in the world. 
 
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
 Constraining your chest anchor will cause your Chest Orbit gesture control to attract like your head/hand gesture controls rather than orbit.
 
 Adds 0 - 4 memory to your expression parameters (See **Memory Calculations** for more details).
@@ -126,13 +139,13 @@ Adds 0 - 4 memory to your expression parameters (See **Memory Calculations** for
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to include three toggles to enable/disable ball collision, bounce, and gravity.
 
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
 Enabling World Physics adds to your Gesture Playable layer. If these layers' order is later shifted, you must run VRLabs' [Fix Order](https://github.com/VRLabs/VRChat-Avatars-3.0#fix-order) script to resolve the sub-animator.
 
 Collision is off by default, due to ball collision's ability to affect world triggers (portals, distance-based mirrors, etc).
@@ -152,18 +165,18 @@ Adds 0 - 3 memory to your expression parameters (See **Memory Calculations** for
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to add a toggle to switch between simplified versus advanced **Gesture Control**.
 |  |  |
 | :------------- | :------------------------------ |
 | `Simple` | Only Primary/Secondary gesture controls are enabled |
 | `Advanced` | All seven gesture controls are enabled |
 
-####
+######
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
 The definition of a 'simple' gesture can be configured from **Remap Control Gestures**
 
 Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for more details).
@@ -175,13 +188,13 @@ Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for
 <details>
   <summary> </summary>
 
-####
+######
 Select whether Simple or Advanced gesture control mode will be set as default.
 
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
 This option is only visible if **Simple Control** is enabled
 </details></blockquote>
 
@@ -191,13 +204,13 @@ This option is only visible if **Simple Control** is enabled
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to have your gesture control mode persist between worlds/avatar loads.
 
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
 This option is only visible if **Simple Control** is enabled
 
 Converts **Simple Control** to use one dedicated bool (1 memory) in your expression parameters.
@@ -209,13 +222,13 @@ Converts **Simple Control** to use one dedicated bool (1 memory) in your express
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to force your facial expressions to maintain their defaults while a ball mode is enabled, regardless of activated gesture.
 
 <blockquote><details>
   <summary>Technical Details</summary>
 
-####
+######
 All blendshapes that exist on your Viseme Mesh set in your Avatar Descriptor are animated to the values they were set to at the time of generating SleightlyBall. Blendshapes starting with 'vrc.' are ignored
 
 As this only accounts for blendshapes, please be wary of any non-blendshape animation properties that are triggered on gesture (eye movement, tongue toggles, etc)
@@ -229,7 +242,7 @@ Enabling this feature but not using Viseme Blendshapes mode or having a Viseme M
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to force VRC Tracking Control to set fingers to Tracking rather than Animation while a ball mode is enabled. This is only relevant to VR controllers that use finger tracking (ex. Valve Knuckles) on Avatars that use animation overrides on finger tracking.
 </details>
 
@@ -237,7 +250,7 @@ Enable this feature to force VRC Tracking Control to set fingers to Tracking rat
 <details>
   <summary> </summary>
 
-####
+######
 Enable this feature to toggle default Unity Spheres that follow the ball's gesture control. This is often only used for either troubleshooting, demonstration, or practice purposes.
 
 <blockquote><details>
@@ -253,7 +266,7 @@ Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for
 <details>
   <summary> </summary>
 
-####
+######
 Enabling/Disabling this option will enable/disable Write Defaults in all generated animator states for SleightlyBall. If it says Write Defaults **(Auto)**, then this is handled automatically to match the current Write Defaults of your Animator Controller.
 
 <blockquote><details>
@@ -273,7 +286,7 @@ If **World Physics** is enabled and your Gesture and FX Animator Controllers are
 <details>
   <summary> </summary>
 
-####
+######
 Enabling this feature will allow for the rearrangement of each **Gesture Control** to map to different gestures. If **Simple Control** is enabled, then the definition of a 'simple' gesture can be redefined here as well.
 
 By default, the gesture control mapping is as follows:
@@ -289,7 +302,7 @@ By default, the gesture control mapping is as follows:
 | `F7 Gesture Handgun` | :white_check_mark: | Secondary Hand Control |
 | `F8 Gesture Thumbs Up` | :white_square_button: | Between Hand Control |
 
-####
+######
 <blockquote><details>
   <summary>Technical Details</summary>
 
@@ -305,13 +318,13 @@ If **Remap Control Gestures** is disabled, the Gesture Control mapping and Simpl
 <details>
   <summary> </summary>
 
-####
+######
 Displays the Necessary Memory to generate and the Available Memory on the current Avatar's Expression Parameters.
 
 <blockquote><details>
   <summary>Necessary Memory can be calculated as:</summary>
   
-  ####
+  ######
 ![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%7B%5Ccolor%7BMagenta%7D%20Total%20Necessary%20Memory%20%3D%20Local%20Synced%20Memory%20&plus;%20Network%20Synced%20Memory)
 
 where:
