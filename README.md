@@ -197,26 +197,26 @@ Displays the Necessary Memory to generate and the Available Memory on the curren
 
 Necessary Memory can be calculated as:
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Total%20Necessary%20Memory%20%3D%20Local%20Synced%20Memory%20&plus;%20Network%20Synced%20Memory)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%%7B%5Ccolor%7BBlue%7D%2020Total%20Necessary%20Memory%20%3D%20Local%20Synced%20Memory%20&plus;%20Network%20Synced%20Memory)
 
 where:
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Local%20Synced%20Memory%20%3D%20%5Cbegin%7Bcases%7D%20%26%20Local%20Bools%20%5Ctext%7B%20if%20%7D%20Local%20Bools%3C%208%20%5C%5C%20%26%208%20%5Ctext%7B%20if%20%7D%20Local%20Bools%20%5Cgeq%208%20%5Cend%7Bcases%7D)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%7B%5Ccolor%7BBlue%7D%20%20Local%20Synced%20Memory%20%3D%20%5Cbegin%7Bcases%7D%20%26%20Local%20Bools%20%5Ctext%7B%20if%20%7D%20Local%20Bools%3C%208%20%5C%5C%20%26%208%20%5Ctext%7B%20if%20%7D%20Local%20Bools%20%5Cgeq%208%20%5Cend%7Bcases%7D)
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Network%20Synced%20Memory%20%3D%20%5Csum%20Enabled%20Synced%20Memory)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%7B%5Ccolor%7BBlue%7D%20%20Network%20Synced%20Memory%20%3D%20%5Csum%20Enabled%20Synced%20Memory)
 
 <details>
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%5Cleft.%5Cbegin%7Bmatrix%7D%203%26%20World%20Physics%5C%5C%204%26%20World%20Constraints%5C%5C%201%26%20Ball%20Demo%20Mode%5C%5C%201%26%20%21%28Save%20Control%20Mode%29%20%5C%26%20Simple%20Control%29%5C%5C%202%20*%20Ball%20Count%26%20Both%20Hands%5C%5C%201%20*%20Ball%20Count%26%20Left%20Handed%20Only%5C%5C%201%20*%20Ball%20Count%26%20Right%20Handed%20Only%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20Enabled%20Local%20Bools)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%7B%5Ccolor%7BBlue%7D%20%20%5Cleft.%5Cbegin%7Bmatrix%7D%203%26%20World%20Physics%5C%5C%204%26%20World%20Constraints%5C%5C%201%26%20Ball%20Demo%20Mode%5C%5C%201%26%20%21%28Save%20Control%20Mode%29%20%5C%26%20Simple%20Control%29%5C%5C%202%20*%20Ball%20Count%26%20Both%20Hands%5C%5C%201%20*%20Ball%20Count%26%20Left%20Handed%20Only%5C%5C%201%20*%20Ball%20Count%26%20Right%20Handed%20Only%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20Enabled%20Local%20Bools)
 </details>
 
 and:
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20Total%20Necessary%20Memory%20%3D%20Local%20Synced%20Memory%20&plus;%20Network%20Synced%20Memory)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%7B%5Ccolor%7BBlue%7D%20%20Total%20Necessary%20Memory%20%3D%20Local%20Synced%20Memory%20&plus;%20Network%20Synced%20Memory)
 
 <details>
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%5Cleft.%5Cbegin%7Bmatrix%7D%208%20%26%20Ball%20Distance%5C%5C%208%20%26%20Ball%20Strength%5C%5C%201%20%26%20Save%20Control%20Mode%20%5C%26%20Simple%20Control%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20Enabled%20Synced%20Memory)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%7B%5Ccolor%7BBlue%7D%20%20%5Cleft.%5Cbegin%7Bmatrix%7D%208%20%26%20Ball%20Distance%5C%5C%208%20%26%20Ball%20Strength%5C%5C%201%20%26%20Save%20Control%20Mode%20%5C%26%20Simple%20Control%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20Enabled%20Synced%20Memory)
 </details>
 
 ### Warnings/Errors
