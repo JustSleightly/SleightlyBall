@@ -5,30 +5,33 @@
 
 # Information
 
-# Instructions
+# Usage Instructions
 
-### Activate License
-<details>
-  <summary> </summary>
+## Importing The Prefab
+<details> 
+  <summary> <strong>  Activate License </strong> </summary>
 
 ######
 Import the SleightlyBall unitypackage into your project, and click on the SleightlyBall.prefab at the default path *Assets/JustSleightly/SleightlyBall*. If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in Discord.
 </details>
 
-### Add to Scene
 <details>
-  <summary> </summary>
+  <summary> <strong> Add to Scene </strong> </summary>
 
 ######
 To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into the scene for Unity base scaling, then drag it onto your desired avatar. Once the prefab detects an Avatar Descriptor and Animator, the **Main Settings** will appear in the inspector.
 </details>
 
 ## Main Settings
+
 <details>
-  <summary> Ball Setup </summary>
+  <summary> <strong> Ball Setup </strong> </summary>
 
 ######
-### Ball Configuration
+<blockquote><details>
+  <summary> <strong> Ball Configuration </strong> </summary>
+
+######
 Select the Hand Configuration to set up the SleightlyBall system
 |  |  |
 | :------------- | :------------------------------ |
@@ -36,7 +39,11 @@ Select the Hand Configuration to set up the SleightlyBall system
 | `Left Handed Only` | Ball Inputs Applied to Left Hand Only |
 | `Right Handed Only` | Ball Inputs Applied to Right Hand Only |
 
-### Separate Balls Per Hand
+#####
+</details>
+
+<details>
+  <summary> <strong> Separate Balls Per Hand </strong> </summary>
 
 ######
 Select whether to configure each hand independently or identically
@@ -55,7 +62,10 @@ This option is only visible if **Ball Configuration** is set to `Both Hands`
 Enabling this option also allows for independent scaling of each hands' balls and colliders during **Anchor Positioning**
 </details></blockquote>
 
-### Ball Inputs
+</details>
+
+<details>
+  <summary> <strong> Ball Inputs </strong> </summary>
 
 ######
 Use the +/- symbol to add/remove additional balls to the system, up to 8 balls. Drag in any GameObject/Prefab from your hierarchy or your project assets. Rearrange them by click/dragging into your preferred order.
@@ -71,13 +81,16 @@ Any Sphere, Box, Capsule, and Mesh Collider components within any GameObjects/Pr
 Leaving an input field blank will yield a Warning. You may continue with blank fields and manually add the balls into the hierarchy later (for advanced users)
 </details></blockquote>
 
+</details></blockquote>
+
 </details>
 
-### Additional Features
-
-#### Ball Distance
 <details>
-  <summary> </summary>
+  <summary> <strong> Additional Features </strong> </summary>
+
+######
+<blockquote><details>
+  <summary> <strong> Ball Distance </strong> </summary>
 
 ######
 Enable this feature to include a radial puppet that adjusts the distance of the hand and head ball anchors from you by a local scale of 1 - 10x. 
@@ -91,9 +104,8 @@ Enable this feature to include a radial puppet that adjusts the distance of the 
 
 </details>
 
-#### Ball Strength
 <details>
-  <summary> </summary>
+  <summary> <strong> Ball Strength </strong></summary>
 
 ######
 Enable this feature to include a radial puppet that adjusts the strength at which the ball is attracted to its anchors. 
@@ -107,9 +119,8 @@ Adds one dedicated float (8 memory) to your expression parameters.
 
 </details>
 
-#### World Constraints
 <details>
-  <summary> </summary>
+  <summary> <strong> World Constraints </strong> </summary>
 
 ######
 Enable this feature to include four toggles to world constrain your hands, head, or chest anchors independently, allowing you to pass the balls between your body and fixed points in the world. 
@@ -125,9 +136,8 @@ Adds 0 - 4 memory to your expression parameters (See **Memory Calculations** for
 
 </details>
 
-#### World Physics
 <details>
-  <summary> </summary>
+  <summary> <strong> World Physics </strong> </summary>
 
 ######
 Enable this feature to include three toggles to enable/disable ball collision, bounce, and gravity.
@@ -147,13 +157,16 @@ Gravity is off by default.
 Adds 0 - 3 memory to your expression parameters (See **Memory Calculations** for more details).
 </details></blockquote>
 
+</details></blockquote>
+
 </details>
 
-### Advanced Options
-
-#### Simple Control
 <details>
-  <summary> </summary>
+  <summary> <strong> Advanced Options </strong> </summary>
+
+######
+<blockquote><details>
+  <summary> <strong> Simple Control </strong> </summary>
 
 ######
 Enable this feature to add a toggle to switch between simplified versus advanced **Gesture Control**.
@@ -174,9 +187,8 @@ Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for
 
 </details>
 
-##### Default Control Mode
 <details>
-  <summary> </summary>
+  <summary> <strong> Default Control Mode </strong> </summary>
 
 ######
 Select whether Simple or Advanced gesture control mode will be set as default.
@@ -190,9 +202,8 @@ This option is only visible if **Simple Control** is enabled
 
 </details>
 
-##### Save Control Mode
 <details>
-  <summary> </summary>
+  <summary> <strong> Save Control Mode </strong> </summary>
 
 ######
 Enable this feature to have your gesture control mode persist between worlds/avatar loads.
@@ -208,9 +219,8 @@ Converts **Simple Control** to use one dedicated bool (1 memory) in your express
 
 </details>
 
-#### Disable Facial Anims
 <details>
-  <summary> </summary>
+  <summary> <strong> Disable Facial Anims </strong> </summary>
 
 ######
 Enable this feature to force your facial expressions to maintain their defaults while a ball mode is enabled, regardless of activated gesture.
@@ -228,17 +238,15 @@ Enabling this feature but not using Viseme Blendshapes mode or having a Viseme M
 
 </details>
 
-#### Force Gesture Tracking
 <details>
-  <summary> </summary>
+  <summary> <strong> Force Gesture Tracking </strong> </summary>
 
 ######
 Enable this feature to force VRC Tracking Control to set fingers to Tracking rather than Animation while a ball mode is enabled. This is only relevant to VR controllers that use finger tracking (ex. Valve Knuckles) on Avatars that use animation overrides on finger tracking.
 </details>
 
-#### Ball Demo Mode
 <details>
-  <summary> </summary>
+  <summary> <strong> Ball Demo Mode </strong> </summary>
 
 ######
 Enable this feature to toggle default Unity Spheres that follow the ball's gesture control. This is often only used for either troubleshooting, demonstration, or practice purposes.
@@ -252,9 +260,8 @@ Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for
 
 </details>
 
-#### Write Defaults
 <details>
-  <summary> </summary>
+  <summary> <strong> Write Defaults </strong> </summary>
 
 ######
 Enabling/Disabling this option will enable/disable Write Defaults in all generated animator states for SleightlyBall. If it says Write Defaults **(Auto)**, then this is handled automatically to match the current Write Defaults of your Animator Controller.
@@ -272,9 +279,8 @@ If **World Physics** is enabled and your Gesture and FX Animator Controllers are
 
 </details>
 
-#### Remap Control Gestures
 <details>
-  <summary> </summary>
+  <summary> <strong> Remap Control Gestures </strong> </summary>
 
 ######
 Enabling this feature will allow for the rearrangement of each **Gesture Control** to map to different gestures. If **Simple Control** is enabled, then the definition of a 'simple' gesture can be redefined here as well.
@@ -302,11 +308,23 @@ The 'Simple?' toggle checkboxes only display if **Simple Control** is enabled
 If **Remap Control Gestures** is disabled, the Gesture Control mapping and Simple Control definitions will generate according to their default configuration regardless of any changes while it is enabled
 </details></blockquote>
 
+</details></blockquote>
+
 </details>
 
-### Memory Calculations
 <details>
-  <summary> </summary>
+  <summary> <strong> Next Step </strong> </summary>
+
+######
+Clicking this button will begin the generation of the SleightlyBall system according to the configuration of the **Main Settings** window, and proceed to **Anchor Positioning**. This button will be greyed out if there are any red errors returned in the Inspector.
+</details>
+
+<details>
+  <summary> <strong> Utilities </strong> </summary>
+
+######
+<blockquote><details>
+  <summary> <strong> Memory Calculations </strong> </summary>
 
 ######
 Displays the Necessary Memory to generate and the Available Memory on the current Avatar's Expression Parameters.
@@ -332,28 +350,68 @@ and:
 ![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%7B%5Ccolor%7BMagenta%7D%20%5Cleft.%5Cbegin%7Bmatrix%7D%208%20%26%20Ball%20Distance%5C%5C%208%20%26%20Ball%20Strength%5C%5C%201%20%26%20Save%20Control%20Mode%20%5C%26%20Simple%20Control%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20Enabled%20Synced%20Memory)
 </details></blockquote>
 
+</details></blockquote>
+
+<blockquote><details>
+  <summary> <strong> Warnings/Errors </strong> </summary>
+
+######
+</details></blockquote>
+
+<blockquote><details>
+  <summary> <strong> Delete SleightlyBall From Avatar </strong> </summary>
+
+######
+</details></blockquote>
+
+<blockquote><details>
+  <summary> <strong> Delete ALL Generated Resources </strong> </summary>
+
+######
+</details></blockquote>
+
+<blockquote><details>
+  <summary> <strong> Check For Updates </strong> </summary>
+
+######
+</details></blockquote>
+
 </details>
-
-### Warnings/Errors
-
-### Next Step
-
-### Delete SleightlyBall From Avatar
-
-### Delete ALL Generated Resources
-
-### Check For Updates
 
 ## Anchor Positioning
 
-### Edit Hand Anchors
+<details>
+  <summary> <strong> Edit Hand Anchors </strong> </summary>
 
-### Edit Head Anchor
+######
+</details>
 
-### Edit Orbit Radius
+<details>
+  <summary> <strong> Edit Head Anchor </strong> </summary>
 
-### Edit Ball Size
+######
+</details>
 
-### Edit Physics Collider Size
+<details>
+  <summary> <strong> Edit Orbit Radius </strong> </summary>
 
-### Complete Setup
+######
+</details>
+
+<details>
+  <summary> <strong> Edit Ball Size</strong> </summary>
+
+######
+</details>
+
+<details>
+  <summary> <strong> Edit Physics Collider Size</strong> </summary>
+
+######
+</details>
+
+<details>
+  <summary> <strong> Complete Setup </strong> </summary>
+
+######
+</details>
