@@ -1,18 +1,24 @@
-
 # SleightlyBall
 
-[![](https://img.shields.io/github/stars/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/stargazers "Stars") [![](https://img.shields.io/github/tag/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/tags "Tags") [![](https://img.shields.io/github/release/justsleightly/sleightlyball.svg)](https://github.com/justsleightly/sleightlyball/releases/latest "Releases") [![](https://img.shields.io/github/issues/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/issues "Issues")
+[![](https://img.shields.io/github/stars/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/stargazers "Stars") [![](https://img.shields.io/github/tag/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/tags "Tags") [![](https://img.shields.io/github/release/justsleightly/sleightlyball.svg)](https://github.com/justsleightly/sleightlyball/releases/latest "Releases") [![](https://img.shields.io/github/issues/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/issues "Issues") [![Visits](https://badges.pufler.dev/visits/justsleightly/sleightlyball)](https://github.com/JustSleightly/SleightlyBall) [![Updated Badge](https://badges.pufler.dev/updated/justsleightly/sleightlyball)](https://github.com/JustSleightly/SleightlyBall/commits/main)
 
-# Information
 
-# Usage Instructions
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png)
+
+# Getting Started
 
 ## Importing The Prefab
 <details> 
   <summary> <strong>  Activate License </strong> </summary>
 
 ######
->Import the SleightlyBall unitypackage into your project, and click on the SleightlyBall.prefab at the default path *Assets/JustSleightly/SleightlyBall*. If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in Discord.
+>Import the SleightlyBall unitypackage into your project, and click on the SleightlyBall.prefab at the default path *Assets/JustSleightly/SleightlyBall*. 
+>
+>![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab.gif)
+>
+>If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in Discord.
+>
+>![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20License%20Activation.gif)
 </details>
 
 <details>
@@ -20,11 +26,23 @@
 
 ######
 >To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into the scene for Unity base scaling, then drag it onto your desired avatar. Once the prefab detects an Avatar Descriptor and Animator, the **Main Settings** will appear in the inspector.
+>
+>![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab%20Placement.gif)
+
+<blockquote><details>
+  <summary>Technical Details</summary>
+
+######
+The prefab can be placed anywhere below an Avatar Descriptor, and it will automatically reparent underneath your Avatar Descriptor.
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab%20AutoPosition.gif)
+</details></blockquote>
 </details>
 
 ## Main Settings
 
 <details>
+
   <summary> <strong> Ball Setup </strong> </summary>
 
 ######
@@ -40,6 +58,8 @@ Select the Hand Configuration to set up the SleightlyBall system
 | `Right Handed Only` | Ball Inputs Applied to Right Hand Only |
 
 #####
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Hand%20Configuration.png)
 </details>
 
 <details>
@@ -53,6 +73,9 @@ Select whether to configure each hand independently or identically
 | `Enabled` | Input a Ball for Each Hand |
 
 #####
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Separate%20Balls%20per%20Hand.png)
+
 <blockquote><details>
   <summary>Technical Details</summary>
 
@@ -69,6 +92,8 @@ Enabling this option also allows for independent scaling of each hands' balls an
 
 ######
 Use the +/- symbol to add/remove additional balls to the system, up to 8 balls. Drag in any GameObject/Prefab from your hierarchy or your project assets. Rearrange them by click/dragging into your preferred order.
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Ball%20Add%20Rearrange.gif)
 
 <blockquote><details>
   <summary>Technical Details</summary>
@@ -157,15 +182,9 @@ Gravity is off by default.
 Adds 0 - 3 memory to your expression parameters (See **Memory Calculations** for more details).
 </details></blockquote>
 
-</details></blockquote>
-
 </details>
 
 <details>
-  <summary> <strong> Advanced Options </strong> </summary>
-
-######
-<blockquote><details>
   <summary> <strong> Simple Control </strong> </summary>
 
 ######
@@ -188,6 +207,36 @@ Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for
 </details>
 
 <details>
+  <summary> <strong> FBT Mode </strong> </summary>
+
+######
+Enable this feature to allow for ball control with your legs.
+|  |  |
+| :------------- | :------------------------------ |
+| `Standard` | When FBT Mode is enabled, Head/Between controls are replaced with Primary/Secondary Foot control |
+| `Complex` | When FBT Mode is enabled, combo gestures act as triggers to allow for entirely alternative gesture control |
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20FBT%20Mode.png)
+
+######
+<blockquote><details>
+  <summary>Technical Details</summary>
+
+######
+Complex Mode only works with one active ball at a time.
+
+Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for more details).
+</details></blockquote>
+
+</details>
+
+</details></blockquote>
+
+<details>
+  <summary> <strong> Advanced Options </strong> </summary>
+
+######
+<blockquote><details>
   <summary> <strong> Default Control Mode </strong> </summary>
 
 ######
@@ -415,3 +464,10 @@ and:
 
 ######
 </details>
+
+
+# Usage
+
+# Roadmap
+
+## Special Thanks
