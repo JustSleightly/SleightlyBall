@@ -52,7 +52,7 @@ To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into th
 
 <blockquote>
 
-The prefab can be placed anywhere below an Avatar Descriptor, and it will automatically reparent underneath your Avatar Descriptor.
+The prefab can be placed as any child of an Avatar Descriptor, and it will automatically reparent as a direct child of the Avatar Descriptor.
 
 ######
 
@@ -299,7 +299,7 @@ Adds 0 - 3 memory to your expression parameters (See **Memory Calculations** for
 Enable this feature to add a toggle to switch between simplified versus advanced **Gesture Control**.
 |  |  |
 | :------------- | :------------------------------ |
-| `Simple` | Only Primary/Secondary gesture controls are enabled |
+| `Simple` | Only 'simple' gesture controls are enabled |
 | `Advanced` | All seven gesture controls are enabled |
 
 ######
@@ -312,7 +312,37 @@ Enable this feature to add a toggle to switch between simplified versus advanced
 
 <blockquote>
 
+By default, Primary, Secondary, and Orbit are considered 'simple' gestures.
+
 The definition of a 'simple' gesture can be configured from **Remap Control Gestures**.
+
+Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for more details).
+
+</details>
+
+</details>
+
+<details>
+
+  <summary> <strong> Shoot Toggle </strong> </summary>
+
+######
+
+<blockquote>
+
+Enable this feature to add a toggle to switch between ball throw vs ball shoot.
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+The shoot forward driver lasts 0.25 seconds which can result in unique behaviors, such as briefly curving the shot, or slowing down on impact if shot into a surface with collision enabled.
 
 Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for more details).
 
@@ -343,6 +373,42 @@ Enable this feature to add a toggle to change the gesture control set to include
 See Advanced Options to select an FBT Mode.
 
 Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for more details).
+
+</details>
+
+</details>
+
+<details>
+
+  <summary> <strong> Pilot Mode </strong> </summary>
+
+######
+
+<blockquote>
+
+Enable this feature to add a two-axis puppet control for each enabled hand.
+
+The puppet menu by default pilots position on the XZ plane, AKA Moving Forward, Moving Backward, Strafing Left, and Strafing Right.
+
+If you a Thumbs Up gesture in either hand while the puppet menu is open, the axes swap to XY controls, replacing Forward and Backward with Up and Down.
+
+Closing the puppet menu will have the ball maintain its position in world space, until you activate your Rigid Return gesture while the menu is closed.
+
+*While the piloting is less desynced than your typical constraint based piloting system, it is still not in perfect sync due to Unity Physics in VRC and other network difficulties. Please be aware others may not see the ball in the exact same location you do.*
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+The ball orientation will still be constrained to your head, but the ball piloting rotation is only constrained to your head's Y rotation. This means you can turn your head left/right to steer the ball, but the ball will never move up or down unless you Thumbs Up.
+
+Adds 17 - 18 memory to your expression parameters (See **Memory Calculations** for more details).
 
 </details>
 
@@ -390,7 +456,9 @@ If it says Write Defaults **(Auto)**, then this is handled automatically to matc
 
 <blockquote>
 
-If your relevant Animator Controller(s) are all set to one Write Defaults mode, the **Write Defaults** option will automatically match and be labeled with **(Auto)**
+If your relevant Animator Controller(s) are all set to one Write Defaults mode, the **Write Defaults** option will automatically match and be labeled with **(Auto)**.
+
+If the Avatar Descriptor does not contain a custom FX layer, the **Write Defaults** option will automatically match the Write Defaults mode of the Gesture Layer if World Physics is enabled, and be labeled with **(Auto)**.
 
 If your relevant Animator Controller has a mix of Write Defaults On and Off, a warning will appear and the **Write Defaults** option will not be labeled with **(Auto)**. This option will be available to manually enable/disable, and the generated states will follow the manually set status.
 
@@ -415,13 +483,17 @@ By default, the gesture control mapping is as follows:
 | Hand Gesture Layout | Simple? | Ball Control Mapping| FBT Mode Standard | FBT Mode Complex |
 | :------------- | :-------------: | :------------- | :------------- | :------------- |
 | `F1 Gesture Idle` | :white_square_button: | Idle | | |
-| `F2 Gesture Fist` | :white_square_button: | Head Control | Primary Foot | Primary Trigger |
+| `F2 Gesture Fist` | :white_square_button: | Head Control | Primary Foot | Primary Trigger* |
 | `F3 Gesture Open Hand` | :white_check_mark: | Chest Orbit | | |
 | `F4 Gesture Fingerpoint` | :white_check_mark: | Primary Hand Control | | |
 | `F5 Gesture Victory` | :white_square_button: | Release Ball | | |
 | `F6 Gesture Rock n Roll` | :white_square_button: | Rigid Return | | |
 | `F7 Gesture Handgun` | :white_check_mark: | Secondary Hand Control | | |
-| `F8 Gesture Thumbs Up` | :white_square_button: | Between Hand Control | Secondary Foot | Secondary Trigger |
+| `F8 Gesture Thumbs Up` | :white_square_button: | Between Hand Control | Secondary Foot | Secondary Trigger* |
+
+######
+
+\* Gesture in opposite hand to switch gesture set of main hand during FBT Mode Complex.
 
 ######
 
@@ -463,11 +535,13 @@ Enable this feature to force your facial expressions to maintain their defaults 
 
 <blockquote>
 
-All blendshapes that exist on your Viseme Mesh set in your Avatar Descriptor are animated to the values they were set to at the time of generating SleightlyBall. Blendshapes starting with 'vrc.' are ignored
+All blendshapes that exist on your Viseme Mesh set in your Avatar Descriptor are animated to the values they were set to at the time of generating SleightlyBall. Blendshapes starting with 'vrc.' are ignored.
 
-As this only accounts for blendshapes, please be wary of any non-blendshape animation properties that are triggered on gesture (eye movement, tongue toggles, etc)
+As this only accounts for blendshapes, please be wary of any non-blendshape animation properties that are triggered on gesture (eye movement, tongue toggles, etc.)
 
-Enabling this feature but not using Viseme Blendshapes mode or having a Viseme Mesh assigned in your Avatar Descriptor will yield an error
+Enabling this feature but not using Viseme Blendshapes mode or having a Viseme Mesh assigned in your Avatar Descriptor will yield an error.
+
+This also affects **Ball Demo** if it is included.
 
 </details>
 
@@ -482,6 +556,18 @@ Enabling this feature but not using Viseme Blendshapes mode or having a Viseme M
 <blockquote>
 
 Enable this feature to force VRC Tracking Control to set fingers to Tracking rather than Animation while a ball mode is enabled. This is only relevant to VR controllers that use finger tracking (ex. Valve Knuckles) on Avatars that use animation overrides on finger tracking.
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+This also affects **Ball Demo** if it is included.
+
+</details>
 
 </details>
 
@@ -503,7 +589,9 @@ Enable this feature to toggle default Unity Spheres that follow the ball's gestu
 
 <blockquote>
 
-If Disable Facial Anims is enabled, Demo Mode will also disable facial animations.
+If **Disable Facial Anims** is enabled, Demo Mode will also disable facial animations.
+
+If **Force Gesture Tracking** is enabled, Demo Mode will also force gesture tracking.
 
 Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for more details).
 
@@ -546,6 +634,69 @@ Using the same Ball source for multiple inputs and setting one to Move and the o
 </details>
 
 </details>
+
+<details>
+
+  <summary> <strong> Default Shoot Toggle On </strong> </summary>
+
+######
+
+<blockquote>
+
+Enable this to enable Shoot Toggle by default in game.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Advanced%20Options%20Shoot.png)
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+This option is only visible if **Shoot Toggle** is enabled.
+
+</details>
+
+</details>
+
+<details>
+
+  <summary> <strong> Save Throw/Shoot Mode </strong> </summary>
+
+######
+
+<blockquote>
+
+Enable this feature to have Throw/Shoot mode persist between worlds/avatar loads.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Advanced%20Options%20Shoot.png)
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+This option is only visible if **Shoot Toggle** is enabled.
+
+Converts **Shoot Toggle** to use one dedicated bool (1 memory) in your expression parameters.
+
+</details>
+
+</details>
+
 
 <details>
 
@@ -644,38 +795,6 @@ Converts **Simple Control** to use one dedicated bool (1 memory) in your express
 
 <details>
 
-  <summary> <strong> Default Control Mode </strong> </summary>
-
-######
-
-<blockquote>
-
-Select whether Simple or Advanced gesture control mode will be set as default.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Control%20Mode.png)
-
-######
-
-<details>
-
-  <summary>Technical Details</summary>
-
-######
-
-<blockquote>
-
-The definition of a Simple gesture can be defined via **Remap Control Gestures**
-
-This option is only visible if **Simple Control** is enabled.
-
-</details>
-
-</details>
-
-<details>
-
   <summary> <strong> Select FBT Mode </strong> </summary>
 
 ######
@@ -714,6 +833,38 @@ This option is only visible if **FBT Mode** is enabled.
 
 <details>
 
+  <summary> <strong> Default Control Mode </strong> </summary>
+
+######
+
+<blockquote>
+
+Select whether Simple or Advanced gesture control mode will be set as default.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Control%20Mode.png)
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+The definition of a Simple gesture can be defined via **Remap Control Gestures**
+
+This option is only visible if **Simple Control** is enabled.
+
+</details>
+
+</details>
+
+<details>
+
   <summary> <strong> Default Ball Strength </strong> </summary>
 
 ######
@@ -742,6 +893,68 @@ This option is only visible if **Ball Strength** is enabled.
 
 </details>
 
+<details>
+
+  <summary> <strong> Select Shoot Strength % </strong> </summary>
+
+######
+
+<blockquote>
+
+Set the strength of the forward driver when using Ball Shoot mode.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Advanced%20Options%20Shoot.png)
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+This option is only visible if **Shoot Toggle** is enabled.
+
+</details>
+
+</details>
+
+<details>
+
+  <summary> <strong> Select Pilot Speed % </strong> </summary>
+
+######
+
+<blockquote>
+
+Set the speed of the ball when using Pilot Mode.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Advanced%20Options%20Pilot.png)
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+Up/Down speeds are halved relative to the speed set for Forward/Backward/Left/Right
+
+This option is only visible if **Pilot Mode** is enabled.
+
+</details>
+
+</details>
+
 </details>
 
 <details>
@@ -756,7 +969,7 @@ Clicking this button will begin the generation of the SleightlyBall system accor
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Advanced%20Options%20Strength.png)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Next%20Step%20Button.png)
 
 ######
 
@@ -1040,6 +1253,27 @@ Triggers if multiple Ball Inputs have the same source GameObject, **Move Or Copy
 
 <details>
 
+  <summary> <strong> ERROR: Can't Detect VRC Example Gesture </strong> </summary>
+
+######
+
+<blockquote>
+
+Triggers if no Gesture Controller is detected in the Avatar Descriptor, **World Physics** is enabled, and the VRC Example Gesture Controller cannot be located. This searches at path: *Assets/VRCSDK/Examples3/Animation/Controllers/vrc_AvatarV3HandsLayer.controller*
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20VRC%20Gesture%20Example.png)
+
+######
+
+</details>
+
+######
+
+
+<details>
+
   <summary> <strong> WARNING: Empty Ball Inputs </strong> </summary>
 
 ######
@@ -1204,6 +1438,24 @@ Deletes the Generated Resources folder at path *Assets/JustSleightly/SleightlyBa
 
 <details>
 
+  <summary> <strong> Authorized user </strong> </summary>
+
+######
+
+<blockquote>
+
+Dynamically displays the current Authorized User's discord name and license type. Just a little extra personal touch!
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Authorized%20User.png)
+
+######
+
+</details>
+
+<details>
+
   <summary> <strong> Check For Updates </strong> </summary>
 
 ######
@@ -1211,6 +1463,12 @@ Deletes the Generated Resources folder at path *Assets/JustSleightly/SleightlyBa
 <blockquote>
 
 Click the circular arrow next to the version number in the bottom left to check for newer versions of SleightlyBall. If a new version is detected, the arrow will turn into a red X and a pop-up window will prompt you to download it. Otherwise, the arrow will turn into a green checkmark.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Update%20Checker.gif)
+
+######
 
 </details>
 
@@ -1232,6 +1490,18 @@ Click the circular arrow next to the version number in the bottom left to check 
 
 <blockquote>
 
+Adjust the labeled BallRoot anchors in the scene view to each index fingertip using the positioning handles.
+
+If necessary, rotate the anchors so that the large arrow is parallel to your fingers, away from your body.
+
+There is an option to enable/disable moving the Hand Anchors symmetrically in World Space.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+
+######
+
 </details>
 
 <details>
@@ -1242,6 +1512,16 @@ Click the circular arrow next to the version number in the bottom left to check 
 
 <blockquote>
 
+Adjust the labeled BallRoot.Head anchor in the scene view to about an arm's length in front of your head using the positioning handle.
+
+If necessary, rotate the anchor so that the large arrow is parallel to your forward view, away from your body.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+
+######
+
 </details>
 
 <details>
@@ -1251,6 +1531,18 @@ Click the circular arrow next to the version number in the bottom left to check 
 ######
 
 <blockquote>
+
+Adjust the labeled BallRoot anchors in the scene view to above each foot/ankle using the positioning handles.
+
+If necessary, rotate the anchors so that the large arrow is parallel to your leg, away from your body straight downwards.
+
+There is an option to enable/disable moving the Foot Anchors symmetrically in World Space.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+
+######
 
 </details>
 
@@ -1270,6 +1562,18 @@ Click the circular arrow next to the version number in the bottom left to check 
 
 <blockquote>
 
+Adjust the Chest Orbit Radius in the scene view to the desired size using the radius handle.
+
+This will be the spherical limit the ball orbits along when using the Ball Orbit gesture.
+
+This is typically a bit bigger than your armspan.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+
+######
+
 </details>
 
 <details>
@@ -1279,6 +1583,18 @@ Click the circular arrow next to the version number in the bottom left to check 
 ######
 
 <blockquote>
+
+Adjust the Foot Orbit Radius in the scene view to the desired size using the radius handle.
+
+This will be the spherical limit the ball orbits along when using the Ball Orbit gesture in FBT Complex Mode.
+
+This is typically up to your knee.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+
+######
 
 </details>
 
@@ -1292,6 +1608,18 @@ Click the circular arrow next to the version number in the bottom left to check 
 
 <blockquote>
 
+Adjust the labeled Ball Sizes in the scene view using the scale handles or the field below.
+
+Alternatively, you can also multi-select balls to scale multiple balls at once.
+
+If you're using Unity 2019, using the center scale handle when the scale is not (1, 1, 1) will exponentially snap initially due to a Unity 2019 bug, but it can still be used to uniformly scale across all axes.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+
+######
+
 </details>
 
 <details>
@@ -1301,6 +1629,16 @@ Click the circular arrow next to the version number in the bottom left to check 
 ######
 
 <blockquote>
+
+Adjust the labeled Ball Collider Sizes in the scene view using the scale handles or the field below.
+
+Alternatively, you can also multi-select balls to scale multiple balls at once.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+
+######
 
 </details>
 
