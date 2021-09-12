@@ -1,12 +1,67 @@
-# SleightlyBall
+# SleightlyBall [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/JSLogo.png" width="30" height="30">](https://vrc.sleightly.dev/ "JustSleightly") [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/Discord.png" width="30" height="30">](https://discord.sleightly.dev/ "Discord") [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/GitHub.png" width="30" height="30">](https://github.sleightly.dev/ "Github") [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/Store.png" width="30" height="30">](https://store.sleightly.dev/ "Store")
 
 [![](https://img.shields.io/github/stars/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/stargazers "Stars") [![](https://img.shields.io/github/tag/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/tags "Tags") [![](https://img.shields.io/github/release/justsleightly/sleightlyball.svg)](https://github.com/justsleightly/sleightlyball/releases/latest "Releases") [![](https://img.shields.io/github/issues/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/issues "Issues") [![Visits](https://badges.pufler.dev/visits/justsleightly/sleightlyball)](https://github.com/JustSleightly/SleightlyBall) [![Updated Badge](https://badges.pufler.dev/updated/justsleightly/sleightlyball)](https://github.com/JustSleightly/SleightlyBall/commits/main)
 
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png)
+
+**SleightlyBall** is a "spring joint ball-like" system built for **VRChat** users. It is the most customizable, modular, feature-rich ball system with an automatic setup tool, allowing for 2 step installation without any VRChat 3.0 or advanced Unity experience whatsoever.
+
+### Features
+
+* **Drag and drop setup** - works with **any** object, not just balls
+* Supports balls on either (or **both**) hands
+* Supports up to **8 balls per hand**
+* Multiple anchor points around the body - pass the ball between hands, head, chest, even the feet or world
+* Configurable ball **distance** and/or **strength** from in-game
+* **Constrain** any of your anchors in the world and still control it to and from them
+* Mesh based physics (not particle) which works with **any** object, including **collision, bounce, and gravity** toggles
+* **Throw/Shoot** modes you can toggle between
+* FBT Mode options to also control the balls with your **feet**
+* **Pilot** the ball like a drone **without** using a constraint-based piloting system, meaning less desync
+* Toggle between simple/complex gesture sets in case you want to manage less gestures
+* **Automatic Write Defaults detection** and compatibility with both on/off
+* **Drag and drop gesture remapping** to any configuration you prefer
+* **Automatically disable facial expressions** while controlling the balls
+* **Automatically optimizes your parameter memory** saving up to 21 memory other systems would use
+
+######
+
+| Specifications | Minimum | Maximum |
+| :------------- | :------------- | :------------- |
+| `Memory` | 1 | 45 |
+| `Icons` | 3 | 33 |
+| `FX Layers` | 4 | 41 |
+| `Animation Clips` | 12 | 91 |
+
+######
+
+<details> 
+
+  <summary> <strong> Full Demo Gif </strong> </summary>
+
+######
+
+<blockquote>
+
 ![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Showcase.gif)
 
-# Getting Started
+</details>
 
-## Importing The Prefab
+---
+
+# Requirements
+
+1. A **validated** license key for first time activation
+	1. License keys can be purchased from my [store](https://store.sleightly.dev/)
+	2. Keys must be validated by joining my [discord](https://discord.sleightly.dev/) and opening a ticket with my automated discord bot
+2. An active **internet connection** while in Unity in order to use the tool - cannot be used offline
+3. Only compatible with Unity for **Windows** - not compatible with Unity for Mac at this time
+
+---
+
+# Installation
+
+### Importing The Prefab
 
 <details> 
 
@@ -62,7 +117,7 @@ The prefab can be placed as any child of an Avatar Descriptor, and it will autom
 
 </details>
 
-## Main Settings
+### Main Settings
 
 <details>
 
@@ -1023,7 +1078,7 @@ where:
 
 ######
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%7B%5Ccolor%7BMagenta%7D%20%5Cleft.%5Cbegin%7Bmatrix%7D%203%20%26%20WorldPhysics%20%5C%5C%204%20%26%20WorldConstraints%20%5C%5C%202%20%26%20WorldConstraints%5C%26FBTMode%20%5C%5C%201%20%26%20BallDemoMode%20%5C%5C%201%20%26%20%21%28%28SaveControlMode%29%5C%26SimpleControl%29%20%5C%5C%201%20%26%20%21%28%28SaveFBTMode%29%5C%26FBTMode%29%20%5C%5C%202%20*%20BallCount%20%26%20BothHands%20%5C%5C%201%20*%20BallCount%20%26%20LeftHandedOnly%20%5C%5C%201%20*%20BallCount%20%26%20RightHandedOnly%20%5C%5C%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20EnabledLocalBools%7D)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%7B%5Ccolor%7BMagenta%7D%20%5Cleft.%5Cbegin%7Bmatrix%7D%203%20%26%20WorldPhysics%5C%5C%204%20%26%20WorldConstraints%5C%5C%202%20%26%20WorldConstraints%5C%26FBTMode%5C%5C%201%20%26%20BallDemoMode%5C%5C%201%20%26%20%21%28SaveControlMode%5C%26SimpleControl%29%5C%5C%201%20%26%20%21%28SaveFBTMode%5C%26FBTMode%29%5C%5C%201%20%26%20%21%28SaveThrowShootMode%5C%26ShootToggle%29%5C%5C%202%20*%20BallCount%20%26%20BothHands%5C%5C%201%20*%20BallCount%20%26%20LeftHandedOnly%5C%5C%201%20*%20BallCount%20%26%20RightHandedOnly%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%5CRightarrow%20%5Csum%20EnabledLocalBools%7D)
 
 ######
 
@@ -1035,7 +1090,7 @@ and:
 
 ######
 
-![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%7B%5Ccolor%7BMagenta%7D%20%5Cleft.%5Cbegin%7Bmatrix%7D%203%20%26%20BallDistance%5C%5C%204%20%26%20BallStrength%20%5C%5C%202%20%26%20SaveControlMode%5C%26SimpleControl%20%5C%5C%201%20%26%20SaveFBTMode%5C%26FBTMode%5C%5C%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%20%5CRightarrow%20%5Csum%20EnabledSyncedMemory%7D)
+![equation](https://latex.codecogs.com/png.latex?%5Cfn_jvn%20%7B%5Ccolor%7BMagenta%7D%20%5Cleft.%5Cbegin%7Bmatrix%7D%208%20%26%20BallDistance%5C%5C%208%20%26%20BallStrength%5C%5C%201%20%26%20SaveControlMode%5C%26SimpleControl%5C%5C%201%20%26%20SaveFBTMode%5C%26FBTMode%5C%5C%201%20%26%20SaveThrowShootMode%5C%26ShootToggle%5C%5C%2016%20%26%20PilotMode%20%5C%5C%202%20%26%20BothHands%5C%26PilotMode%5C%5C%201%20%26%20LeftHandedOnly%5C%26PilotMode%5C%5C%201%20%26%20RightHandedOnly%5C%26PilotMode%20%5Cend%7Bmatrix%7D%5Cright%5C%7D%5CRightarrow%20%5Csum%20EnabledSyncedMemory%7D)
 
 ######
 
@@ -1474,7 +1529,7 @@ Click the circular arrow next to the version number in the bottom left to check 
 
 </details>
 
-## Anchor Positioning
+### Anchor Positioning
 
 <details>
 
@@ -1518,7 +1573,7 @@ If necessary, rotate the anchor so that the large arrow is parallel to your forw
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Head%20Anchor.gif)
 
 ######
 
@@ -1538,9 +1593,11 @@ If necessary, rotate the anchors so that the large arrow is parallel to your leg
 
 There is an option to enable/disable moving the Foot Anchors symmetrically in World Space.
 
+This option is only visible if **FBT Mode** is enabled.
+
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Foot%20Anchors.gif)
 
 ######
 
@@ -1570,7 +1627,7 @@ This is typically a bit bigger than your armspan.
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Chest%20Orbit%20Radius.gif)
 
 ######
 
@@ -1590,9 +1647,11 @@ This will be the spherical limit the ball orbits along when using the Ball Orbit
 
 This is typically up to your knee.
 
+This option is only visible if **FBT Mode** is enabled and set to Complex Mode.
+
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Feet%20Orbit%20Radius.gif)
 
 ######
 
@@ -1650,10 +1709,198 @@ Alternatively, you can also multi-select balls to scale multiple balls at once.
 
 <blockquote>
 
+Once **Anchor Positioning** is finished, click **Complete Setup** to generate all the required animations and finalize the system and 3.0.
+
 </details>
+
+---
 
 # Usage
 
+For information regarding menu options, please see **Additional Features** under **Main Settings** above.
+
+<details>
+
+  <summary> <strong> Gesture Mapping </strong> </summary>
+
+######
+
+<blockquote>
+
+By default, the gesture control mapping is as follows:
+
+| Hand Gesture Layout | Simple? | Ball Control Mapping| FBT Mode Standard | FBT Mode Complex |
+| :------------- | :-------------: | :------------- | :------------- | :------------- |
+| `F1 Gesture Idle` | :white_square_button: | Idle | | |
+| `F2 Gesture Fist` | :white_square_button: | Head Control | Primary Foot | Primary Trigger* |
+| `F3 Gesture Open Hand` | :white_check_mark: | Chest Orbit | | |
+| `F4 Gesture Fingerpoint` | :white_check_mark: | Primary Hand Control | | |
+| `F5 Gesture Victory` | :white_square_button: | Release Ball | | |
+| `F6 Gesture Rock n Roll` | :white_square_button: | Rigid Return | | |
+| `F7 Gesture Handgun` | :white_check_mark: | Secondary Hand Control | | |
+| `F8 Gesture Thumbs Up` | :white_square_button: | Between Hand Control | Secondary Foot | Secondary Trigger* |
+
+######
+
+This mapping can be reconfigured under **Advanced Settings** using **Remap Control Gestures**
+
+</details>
+
+<details>
+
+  <summary> <strong> Control Functions </strong> </summary>
+
+######
+
+<blockquote>
+
+| Ball Control | Function |
+| :------------- | :------------- |
+| `Idle` | No function - Preserves the last used control. |
+| `Head Control` | Attracts the ball to the anchor controlled by your head. |
+| `Chest Orbit` | Releases the ball and sets a firm limiter at a radius centered around your chest. |
+| `Primary Hand Control` | Attracts the ball to the anchor controlled by your primary hand. |
+| `Release Ball` | Throw the ball from its current position. / `Shoot Toggle` Shoot the ball in the direction your primary hand is pointing. |
+| `Rigid Return` | Quickly recall the ball back to its primary hand anchor. |
+| `Secondary Hand Control` | Attracts the ball to the anchor controlled by your secondary hand. |
+| `Between Hand Control` | Attracts the ball to halfway point between your primary and secondary hand anchors. |
+| `Primary Foot Control` | `FBT Simple` Attracts the ball to the anchor controlled by your primary foot. |
+| `Secondary Foot Control` | `FBT Simple` Attracts the ball to the anchor controlled by your secondary foot. |
+| `Primary Trigger` | `FBT Complex` Holding this trigger in your opposite hand converts your primary hand gesture set into a primary foot centered one. |
+| `Secondary Trigger` | `FBT Complex` Holding this trigger in your opposite hand converts your primary hand gesture set into a secondary foot centered one. |
+
+######
+
+</details>
+
+---
+
 # Frequently Asked Questions
 
+<details>
+
+  <summary> <strong> Is SleightlyBall compatible with VRChat Quest Avatars? </strong> </summary>
+
+######
+
+<blockquote>
+
+**No**, as VRChat Quest does not support Physics Objects (Rigidbodies, Joints, Colliders) nor Constraints at this time. Other sprint joint ball systems shouldn't be compatible either.
+
+</details>
+
+<details>
+
+  <summary> <strong> None of my toggles work anymore! HELP?</strong> </summary>
+
+######
+
+<blockquote>
+
+If you have included World Physics, this may occur if you rearrange the layers in your Gesture Playable Layer of your Avatar Descriptor. If these layers' order is shifted, you must run **VRLabs' [Fix Order](https://github.com/VRLabs/VRChat-Avatars-3.0#fix-order)** script to resolve the sub-animator. Alternatively, you can re-generate **SleightlyBall**
+
+</details>
+
+<details>
+
+  <summary> <strong> Can I edit/swap the balls after I generate SleightlyBall? </strong> </summary>
+
+######
+
+<blockquote>
+
+**Yes**, expand the SB_SleightlyBall hierarchy until you reach the Left/Right Ball Modes. You can replace any child to the Ball Mode objects, just remember to leave those child objects enabled, as your animations toggle the Ball Modes on/off.
+
+</details>
+
+<details>
+
+  <summary> <strong> How do I export SleightlyBall with my commercial package? </strong> </summary>
+
+######
+
+<blockquote>
+
+Assuming you have a **commercial license** for SleightlyBall, the script generates everything from scratch, making it easy to export without worrying about conflicting with other packages.
+
+You can find these generated resources at _Assets/JustSleightly/SleightlyBall/Generated Resources/_
+
+The folder with your avatar's SleightlyBall under Generated Resources is the only one you need to export, aside from the files of the actual balls you used with the tool. The only exception to this is if you did not have an FX controller, Gesture controller, Expression Parameters, or Expressions Menu by default, in which those will be generated in your _Assets/_ folder.
+
+**You may not** export or redistribute the _SleightlyBall.dll_ file under _Assets/JustSleightly/SleightlyBall/Resources/. Please refer to the full Terms Of Use on my [store](https://store.sleightly.dev/).
+
+</details>
+
+<details>
+
+  <summary> <strong> Can I change the computer my license is registered to? </strong> </summary>
+
+######
+
+<blockquote>
+
+**Yes**, in the event you change hardware, you can open an automated Reset/Transfer License ticket on [discord](https://discord.sleightly.dev/). There is a cooldown period to prevent abuse, and these logs will be monitored for misuse. If you need to re-transfer sooner than this transfer period, open a support ticket on [discord](https://discord.sleightly.dev/).
+
+</details>
+
+<details>
+
+  <summary> <strong> My license key isn't working! </strong> </summary>
+
+######
+
+<blockquote>
+
+Open a support ticket on [discord](https://discord.sleightly.dev/) or check the SleightlyBall support channel for known issues if you are a validated customer.
+
+</details>
+
+<details>
+
+  <summary> <strong> Where do I report a bug? </strong> </summary>
+
+######
+
+<blockquote>
+
+You can add issues to this github repository, or post it in the support channel for SleightlyBall on [discord](https://discord.sleightly.dev/).
+
+</details>
+
+<details>
+
+  <summary> <strong> Where can I request features/make suggestions? </strong> </summary>
+
+######
+
+<blockquote>
+
+Feel free to leave these in the support channel on [discord](https://discord.sleightly.dev/) and we can discuss them in more detail.
+
+</details>
+
+<details>
+
+  <summary> <strong> I need more help! </strong> </summary>
+
+######
+
+<blockquote>
+
+If you need help with using SleightlyBall, reach out in the support channel on [discord](https://discord.sleightly.dev/) so me or a community member can help. If you have private issues, open up a support ticket instead.
+
+</details>
+
+---
+
 ## Special Thanks
+
+To my early alpha customers/testers for waiting up to nearly 11 months for this release - LeBUBBLES/ksivl/mango/KeepItBlank/Zen/Squirtles/PrimeSlav/Ember/Ronin
+
+**[PF_Cactus](https://discord.gg/FJKB768)** - For the original inspiration of making a custom inspector multi-step setup script with his original drone prefab
+
+**[Joshuarox100](https://github.com/Joshuarox100)** - Whose logic in [Inventory Inventor](https://github.com/Joshuarox100/VRC-Inventory-Inventor) is directly used for the memory optimization in this system
+
+**[Lin](https://github.com/oofdesu)** - Who coincidentally released [World Physics](https://github.com/VRLabs/VRChat-Avatars-3.0#world-physics) while I was tackling getting this system to have collision in Nov 2020
+
+and **especially [Dreadrith](https://discord.gg/ZsPfrGn)** - For basically helping me learn C# for Unity/VRC and directly implementing the licensing system on the script
