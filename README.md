@@ -1,6 +1,6 @@
 # SleightlyBall [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/JSLogo.png" width="30" height="30">](https://vrc.sleightly.dev/ "JustSleightly") [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/Discord.png" width="30" height="30">](https://discord.sleightly.dev/ "Discord") [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/GitHub.png" width="30" height="30">](https://github.sleightly.dev/ "Github") [<img src="https://github.com/JustSleightly/Resources/raw/main/Icons/Store.png" width="30" height="30">](https://store.sleightly.dev/ "Store")
 
-[![](https://img.shields.io/github/stars/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/stargazers "Stars") [![](https://img.shields.io/github/tag/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/tags "Tags") [![](https://img.shields.io/github/release/justsleightly/sleightlyball.svg)](https://github.com/justsleightly/sleightlyball/releases/latest "Releases") [![](https://img.shields.io/github/issues/justsleightly/sleightlyball.svg)](https://github.com/JustSleightly/SleightlyBall/issues "Issues") [![Visits](https://badges.pufler.dev/visits/justsleightly/sleightlyball)](https://github.com/JustSleightly/SleightlyBall) [![Updated Badge](https://badges.pufler.dev/updated/justsleightly/sleightlyball)](https://github.com/JustSleightly/SleightlyBall/commits/main)
+[![GitHub stars](https://img.shields.io/github/stars/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/stargazers) [![GitHub Tags](https://img.shields.io/github/tag/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/tags) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/JustSleightly/SleightlyBall?include_prereleases)](https://github.com/JustSleightly/SleightlyBall/releases) [![GitHub issues](https://img.shields.io/github/issues/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/issues) [![GitHub last commit](https://img.shields.io/github/last-commit/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/commits/main) [![Discord](https://img.shields.io/discord/780192344800362506)](https://discord.sleightly.dev/) ![Twitter Follow](https://img.shields.io/twitter/follow/SleightlyDev?style=social)
 
 ![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png)
 
@@ -1897,7 +1897,7 @@ If you need help with using SleightlyBall, reach out in the support channel on [
 
 To my early alpha customers/testers for waiting up to nearly 11 months for this release - LeBUBBLES/ksivl/mango/KeepItBlank/Zen/Squirtles/PrimeSlav/Ember/Ronin
 
-**[PF_Cactus](https://discord.gg/FJKB768)** - For the original inspiration of making a custom inspector multi-step setup script with his original drone prefab
+**[PF_Cactus](https://discord.gg/FJKB768)** - For the original inspiration of making a custom inspector multi-step setup script with his original drone
 
 **[Joshuarox100](https://github.com/Joshuarox100)** - Whose logic in [Inventory Inventor](https://github.com/Joshuarox100/VRC-Inventory-Inventor) is directly used for the memory optimization in this system
 
