@@ -4,7 +4,7 @@
 
 ![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png)
 
-**SleightlyBall** is a "spring joint ball-like" system built for **VRChat** users. It is the most customizable, modular, feature-rich ball system with an automatic setup tool, allowing for 2 step installation without any VRChat 3.0 or advanced Unity experience whatsoever.
+**SleightlyBall** is a "spring joint ball" like system built for **VRChat** users. It is the most customizable, modular, feature-rich ball system with an automatic setup tool, allowing for 2 step installation without any VRChat 3.0 or advanced Unity experience whatsoever.
 
 ### Features
 
@@ -1903,4 +1903,4 @@ To my early alpha customers/testers for waiting up to nearly 11 months for this 
 
 **[Lin](https://github.com/oofdesu)** - Who coincidentally released [World Physics](https://github.com/VRLabs/VRChat-Avatars-3.0#world-physics) while I was tackling getting this system to have collision in Nov 2020
 
-and **especially [Dreadrith](https://discord.gg/ZsPfrGn)** - For basically helping me learn C# for Unity/VRC and directly implementing the licensing system on the script
+and **especially [Dreadrith](https://github.com/Dreadrith/DreadScripts)** - For basically helping me learn C# for Unity/VRC and directly implementing the licensing system on the script
