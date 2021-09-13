@@ -57,7 +57,7 @@
 2. An active **internet connection** while in Unity in order to use the tool - cannot be used offline
 3. Only compatible with Unity for **Windows** - not compatible with Unity for Mac/Linux at this time
 4. Compatible with both Unity 2018.4.20f1 and 2019.4.29f1
-5. Pre-requisite import - VRCSDK of at least 2021 compatible with your Unity version
+5. Pre-requisite import - VRCSDK3 of at least 2021 compatible with your Unity version
 
 ---
 
