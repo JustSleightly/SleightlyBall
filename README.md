@@ -55,7 +55,7 @@
 	1. License keys can be purchased from my [store](https://store.sleightly.dev/)
 	2. Keys must be validated by joining my [discord](https://discord.sleightly.dev/) and opening a ticket with my automated discord bot
 2. An active **internet connection** while in Unity in order to use the tool - cannot be used offline
-3. Only compatible with Unity for **Windows** - not compatible with Unity for Mac at this time
+3. Only compatible with Unity for **Windows** - not compatible with Unity for Mac/Linux at this time
 
 ---
 
