@@ -39,7 +39,7 @@ This is a **system** and does not include any balls in its own package. Please i
 
 <details> 
 
-  <summary> <strong> Full Demo Gif </strong> </summary>
+  <summary> <strong> Full Demo GIF </strong> </summary>
 
 ######
 
