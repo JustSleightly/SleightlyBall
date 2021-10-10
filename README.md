@@ -6,6 +6,8 @@
 
 **SleightlyBall** is a "spring joint ball" like system built for **VRChat** users. It is the most customizable, modular, feature-rich ball system with an automatic setup tool, allowing for 2 step installation without any VRChat 3.0 or advanced Unity experience whatsoever.
 
+This is a **system** and does not include any balls in its own package. Please import your own.
+
 ### Features
 
 * **Drag and drop setup** - works with **any** object, not just balls
@@ -2000,7 +2002,7 @@ If you need help with using SleightlyBall, reach out in the designated support c
 
 ## Special Thanks
 
-To my early alpha customers/testers for waiting up to nearly 11 months for this release - LeBUBBLES/ksivl/mango/KeepItBlank/Zen/Squirtles/PrimeSlav/Ember/Ronin/IMPACT/Once
+To my early alpha customers/testers for waiting up to nearly a year for this release - LeBUBBLES/ksivl/mango/KeepItBlank/Zen/Squirtles/PrimeSlav/Ember/Ronin/IMPACT/Once
 
 **[PF_Cactus](https://discord.gg/FJKB768)** - For the original inspiration of making a custom inspector multi-step setup script with his original drone
 
