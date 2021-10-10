@@ -22,7 +22,7 @@
 * **Automatic Write Defaults detection** and compatibility with both on/off
 * **Drag and drop gesture remapping** to any configuration you prefer
 * **Automatically disable facial expressions** while controlling the balls
-* **Automatically optimizes your parameter memory** saving up to 21 memory other systems would use
+* **Automatically optimizes your parameter memory** saving up to 21 memory other systems would use. **Up to 29/32 (90%)** of the menu options fit **within 8 memory!**
 
 ######
 
@@ -51,13 +51,14 @@
 
 # Requirements
 
-1. A **validated** license key for first time activation
-	1. License keys can be purchased from my [store](https://store.sleightly.dev/)
-	2. Keys must be validated by joining my [discord](https://discord.sleightly.dev/) and opening a ticket with my automated discord bot
-2. An active **internet connection** while in Unity in order to use the tool - cannot be used offline
-3. Only compatible with Unity for **Windows** - not compatible with Unity for Mac/Linux at this time
-4. Compatible with both Unity 2018 and 2019
-5. Pre-requisite import - VRCSDK3 of at least 2021 compatible with your Unity version
+1. Basic Unity experience + VRChat SDK3 uploading experience.
+2. A **validated** license key for first time activation.
+	1. License keys can be purchased from my [store](https://store.sleightly.dev/).
+	2. Keys must be validated by joining my [discord](https://discord.sleightly.dev/) and opening a ticket with my automated discord bot.
+2. An active **internet connection** while in Unity in order to use the tool - cannot be used offline.
+3. Only compatible with Unity for **Windows** - not compatible with Unity for Mac/Linux at this time. Windows 11 is untested.
+4. Compatible with both Unity 2018 and 2019.
+5. Pre-requisite import - [VRCSDK3](https://vrchat.com/home/download) of at least 2021 compatible with your Unity version.
 
 ---
 
@@ -79,7 +80,7 @@ Import the SleightlyBall unitypackage into your project, and click on the Sleigh
 
 ![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab.gif)
 
-If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in Discord.
+If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in [Discord](https://discord.sleightly.dev/).
 
 ######
 
@@ -152,40 +153,6 @@ Select the Hand Configuration to set up the SleightlyBall system.
 
 <details>
 
-  <summary> <strong> Separate Balls Per Hand </strong> </summary>
-
-######
-
-<blockquote>
-
-Select whether to configure each hand independently or identically.
-|  |  |
-| :------------- | :------------------------------ |
-| `Disabled` | Each Ball Input Applies to Both Hands |
-| `Enabled` | Input a Ball for Each Hand |
-
-#####
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Separate%20Balls%20per%20Hand.png)
-
-<details>
-
-  <summary>Technical Details</summary>
-
-######
-
-<blockquote>
-
-This option is only visible if **Ball Configuration** is set to `Both Hands`.
-
-Enabling this option also allows for independent scaling of each hands' balls and colliders during **Anchor Positioning**.
-
-</details>
-
-</details>
-
-<details>
-
   <summary> <strong> Ball Inputs </strong> </summary>
 
 ######
@@ -207,6 +174,8 @@ Use the +/- symbol to add/remove additional balls to the system, up to 8 balls. 
 <blockquote>
 
 All GameObjects will have their root re-positioned to (0, 0, 0).
+
+If the input GameObject is a prefab, the prefab will be unpacked.
 
 Inputting the Avatar Root or SleightlyBall's own GameObject will automatically be removed.
 
@@ -252,7 +221,9 @@ Enable this feature to include a radial puppet that adjusts the distance of the 
 
 <blockquote>
 
-If FBT Mode is enabled, this also affects foot anchors.
+This also affects your orbit radius, but the radius may be scaled differently than your hand anchor distance depending on your initial set radius.
+
+If FBT Mode is enabled, this also affects foot anchors and foot orbits.
 
 Adds one dedicated float (8 memory) to your expression parameters.
 
@@ -399,7 +370,7 @@ Enable this feature to add a toggle to switch between ball throw vs ball shoot.
 
 <blockquote>
 
-The shoot forward driver lasts 0.25 seconds which can result in unique behaviors, such as briefly curving the shot, or slowing down on impact if shot into a surface with collision enabled.
+The shoot forward driver lasts 0.25 seconds which can result in unique behaviors, such as briefly curving the shot, or slowing down on impact if shot into a surface with collision enabled at short range.
 
 Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for more details).
 
@@ -445,11 +416,11 @@ Adds 0 - 1 memory to your expression parameters (See **Memory Calculations** for
 
 Enable this feature to add a two-axis puppet control for each enabled hand.
 
-The puppet menu by default pilots position on the XZ plane, AKA Moving Forward, Moving Backward, Strafing Left, and Strafing Right.
+The puppet menu, by default, pilots position on the XZ plane: AKA Moving Forward, Moving Backward, Strafing Left, and Strafing Right.
 
-If you a Thumbs Up gesture in either hand while the puppet menu is open, the axes swap to XY controls, replacing Forward and Backward with Up and Down.
+**If you do a Thumbs Up gesture** in either hand while the puppet menu is open, the axes swap to XY controls, replacing Forward and Backward with Up and Down.
 
-Closing the puppet menu will have the ball maintain its position in world space, until you activate your Rigid Return gesture while the menu is closed.
+Closing the puppet menu will have the ball maintain its position in world space, until you **activate your Rigid Return gesture while the menu is closed**.
 
 *While the piloting is less desynced than your typical constraint based piloting system, it is still not in perfect sync due to Unity Physics in VRC and other network difficulties. Please be aware others may not see the ball in the exact same location you do.*
 
@@ -499,7 +470,7 @@ Enabling/Disabling this option will enable/disable Write Defaults in all generat
 
 ######
 
-If it says Write Defaults **(Auto)**, then this is handled automatically to match the current Write Defaults of your Animator Controller.
+If it says Write Defaults **(Auto)**, then this is handled automatically to match the current Write Defaults of your Animator Controller(s).
 
 ######
 
@@ -515,7 +486,7 @@ If it says Write Defaults **(Auto)**, then this is handled automatically to matc
 
 If your relevant Animator Controller(s) are all set to one Write Defaults mode, the **Write Defaults** option will automatically match and be labeled with **(Auto)**.
 
-If the Avatar Descriptor does not contain a custom FX layer, the **Write Defaults** option will automatically match the Write Defaults mode of the Gesture Layer if World Physics is enabled, and be labeled with **(Auto)**.
+If the Avatar Descriptor does not contain a custom FX layer and if World Physics is enabled, the **Write Defaults** option will automatically match the Write Defaults mode of the Gesture Layer  and be labeled with **(Auto)**.
 
 If your relevant Animator Controller has a mix of Write Defaults On and Off, a warning will appear and the **Write Defaults** option will not be labeled with **(Auto)**. This option will be available to manually enable/disable, and the generated states will follow the manually set status.
 
@@ -535,24 +506,9 @@ If **World Physics** is enabled and your Gesture and FX Animator Controllers are
 
 Enabling this feature will allow for the rearrangement of each **Gesture Control** to map to different gestures. If **Simple Control** is enabled, then the definition of a 'simple' gesture can be redefined here as well.
 
-By default, the gesture control mapping is as follows:
-
-| Hand Gesture Layout | Simple? | Ball Control Mapping| FBT Mode Standard | FBT Mode Complex |
-| :------------- | :-------------: | :------------- | :------------- | :------------- |
-| `F1 Gesture Idle` | :white_square_button: | Idle | | |
-| `F2 Gesture Fist` | :white_square_button: | Head Control | Primary Foot | Primary Trigger* |
-| `F3 Gesture Open Hand` | :white_check_mark: | Chest Orbit | | |
-| `F4 Gesture Fingerpoint` | :white_check_mark: | Primary Hand Control | | |
-| `F5 Gesture Victory` | :white_square_button: | Release Ball | | |
-| `F6 Gesture Rock n Roll` | :white_square_button: | Rigid Return | | |
-| `F7 Gesture Handgun` | :white_check_mark: | Secondary Hand Control | | |
-| `F8 Gesture Thumbs Up` | :white_square_button: | Between Hand Control | Secondary Foot | Secondary Trigger* |
-
 ######
 
-\* Gesture in opposite hand to switch gesture set of main hand during FBT Mode Complex.
-
-######
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Gesture%20Remapping.gif)
 
 <details>
 
@@ -686,7 +642,7 @@ Ball Inputs from the project assets rather than the hierarchy cannot be set to M
 
 Using the same Ball source for multiple inputs and setting them to Move will yield an error, as you cannot move one object into two locations.
 
-Using the same Ball source for multiple inputs and setting one to Move and the others to copy will instantiate the copies first during generation, before moving the remaining one.
+Using the same Ball source for multiple inputs and setting one to Move and the others to copy, will instantiate the copies first during generation, before moving the remaining one.
 
 </details>
 
@@ -812,6 +768,62 @@ Enable this feature to have FBT mode persist between worlds/avatar loads.
 This option is only visible if **FBT Mode** is enabled.
 
 Converts **FBT Mode** to use one dedicated bool (1 memory) in your expression parameters.
+
+</details>
+
+</details>
+
+<details>
+
+  <summary> <strong> Attach To Index Finger </strong> </summary>
+
+######
+
+<blockquote>
+
+By default, the ball hand anchors will be reparented to your wrist bone. Enable this attach to your furthest Index finger bone instead.
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+If you do not have Index finger bones mapped, it will end up attached to your wrist bone anyway regardless of this setting.
+
+This setting will locate your furthest bone regardless of it you have all three finger bones mapped in your humanoid rig.
+
+</details>
+
+</details>
+
+<details>
+
+  <summary> <strong> Separate Balls Per Hand </strong> </summary>
+
+######
+
+<blockquote>
+
+Select whether to configure each hand independently or identically. Enable this to input a ball for each hand rather than have each ball apply to both hands.
+
+#####
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Separate%20Balls%20per%20Hand.png)
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+This option is only visible if **Ball Configuration** is set to `Both Hands`.
+
+Enabling this option also allows for independent scaling of each hands' balls and colliders during **Anchor Positioning**.
 
 </details>
 
@@ -1007,6 +1019,38 @@ Set the speed of the ball when using Pilot Mode.
 Up/Down speeds are halved relative to the speed set for Forward/Backward/Left/Right
 
 This option is only visible if **Pilot Mode** is enabled.
+
+</details>
+
+</details>
+
+<details>
+
+  <summary> <strong> Save File Path </strong> </summary>
+
+######
+
+<blockquote>
+
+Select where to create the GeneratedSBResources folder which contains all of the generated files.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Save%20File%20Path.png)
+
+######
+
+<details>
+
+  <summary>Technical Details</summary>
+
+######
+
+<blockquote>
+
+By default, this path is *Assets/JustSleightly/SleightlyBall*.
+
+Changes made to this path will attempt to be saved to your editor preferences for use in other projects as well.
 
 </details>
 
@@ -1256,7 +1300,7 @@ Triggers if the model's humanoid rig configuration does not have the right hand 
 
 <blockquote>
 
-Triggers if the model's humanoid rig configuration does not have both feet mapped, and **FBT Mode** is enabled.
+Triggers if the model's humanoid rig configuration does not have both feet mapped, while **FBT Mode** is enabled.
 
 ######
 
@@ -1301,47 +1345,6 @@ Triggers if multiple Ball Inputs have the same source GameObject, **Move Or Copy
 ######
 
 ![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Move%20Multiple.png)
-
-######
-
-</details>
-
-######
-
-<details>
-
-  <summary> <strong> ERROR: Can't Detect VRC Example Gesture </strong> </summary>
-
-######
-
-<blockquote>
-
-Triggers if no Gesture Controller is detected in the Avatar Descriptor, **World Physics** is enabled, and the VRC Example Gesture Controller cannot be located. This searches at path: *Assets/VRCSDK/Examples3/Animation/Controllers/vrc_AvatarV3HandsLayer.controller*
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20VRC%20Gesture%20Example.png)
-
-######
-
-</details>
-
-######
-
-
-<details>
-
-  <summary> <strong> WARNING: Empty Ball Inputs </strong> </summary>
-
-######
-
-<blockquote>
-
-Triggers if any Ball Input fields are left blank. Balls can be added after the hierarchy is generated, but you will not be able to take advantage of any of the positioning/scaling tools.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Warning%20Empty%20Ball%20Inputs.png)
 
 ######
 
@@ -1411,6 +1414,48 @@ Triggers if the FX Controller, Expression Parameters, or Expressions Menu in you
 
 <details>
 
+  <summary> <strong> ERROR: Can't Detect VRC Example Gesture </strong> </summary>
+
+######
+
+<blockquote>
+
+Triggers if no Gesture Controller is detected in the Avatar Descriptor, **World Physics** is enabled, and the VRC Example Gesture Controller cannot be located. This searches at path: *Assets/VRCSDK/Examples3/Animation/Controllers/vrc_AvatarV3HandsLayer.controller*
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20VRC%20Gesture%20Example.png)
+
+######
+
+</details>
+
+######
+
+<details>
+
+  <summary> <strong> WARNING: Empty Ball Inputs </strong> </summary>
+
+######
+
+<blockquote>
+
+Triggers if any Ball Input fields are left blank. Balls can be added after the hierarchy is generated, but you will not be able to take advantage of any of the positioning/scaling tools.
+
+Press OK to acknowledge this warning and stop disabling the Next Step button. If there are any other errors, they will still disable the Next Step button.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Warning%20Empty%20Ball%20Inputs.png)
+
+######
+
+</details>
+
+######
+
+<details>
+
   <summary> <strong> ERROR: Double Layer Rig Bug Detected </strong> </summary>
 
 ######
@@ -1437,7 +1482,7 @@ This is a known VRCSDK bug that occurs when switching the FBX of a model between
 
 <details>
 
-  <summary> <strong> Delete SleightlyBall From Avatar </strong> </summary>
+  <summary> <strong> Delete From Avatar </strong> </summary>
 
 ######
 
@@ -1477,13 +1522,13 @@ Deletes From Expression Parameters: Any Parameters with the Prefix "SB".
 
 <details>
 
-  <summary> <strong> Delete ALL Generated Resources </strong> </summary>
+  <summary> <strong> Delete from Project </strong> </summary>
 
 ######
 
 <blockquote>
 
-Deletes the Generated Resources folder at path *Assets/JustSleightly/SleightlyBall/GeneratedResources*. This may contain files for more than just the current avatar if you have generated SleightlyBall multiple times in this project.
+Deletes the Generated Resources folder at path ***Save File Path**/GeneratedSBResources*. This may contain files for more than just the current avatar if you have generated SleightlyBall multiple times in this project.
 
 ######
 
@@ -1521,6 +1566,8 @@ Dynamically displays the current Authorized User's discord name and license type
 
 Click the circular arrow next to the version number in the bottom left to check for newer versions of SleightlyBall. If a new version is detected, the arrow will turn into a red X and a pop-up window will prompt you to download it. Otherwise, the arrow will turn into a green checkmark.
 
+This will automatically check the first time it is loaded per day.
+
 ######
 
 ![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Update%20Checker.gif)
@@ -1536,6 +1583,8 @@ Click the circular arrow next to the version number in the bottom left to check 
 <details>
 
   <summary> <strong> Edit Anchors </strong> </summary>
+
+######
 
 <blockquote>
 
@@ -1610,6 +1659,8 @@ This option is only visible if **FBT Mode** is enabled.
 <details>
 
   <summary> <strong> Edit Orbit Radius </strong> </summary>
+
+######
   
 <blockquote>
 
@@ -1673,11 +1724,11 @@ Adjust the labeled Ball Sizes in the scene view using the scale handles or the f
 
 Alternatively, you can also multi-select balls to scale multiple balls at once.
 
-If you're using Unity 2019, using the center scale handle when the scale is not (1, 1, 1) will exponentially snap initially due to a Unity 2019 bug, but it can still be used to uniformly scale across all axes.
+If you're using Unity 2019, using the center scale handle when the scale is not (1, 1, 1) will exponentially snap initially due to a [Unity 2019 bug](https://forum.unity.com/threads/case-1264038-handles-scalehandle-incorrect-when-center-scaling.933798/), but it can still be used to uniformly scale across all axes.
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Ball%20Size.gif)
 
 ######
 
@@ -1697,7 +1748,7 @@ Alternatively, you can also multi-select balls to scale multiple balls at once.
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Hand%20Anchors.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Edit%20Collider%20Size.gif)
 
 ######
 
@@ -1744,6 +1795,8 @@ By default, the gesture control mapping is as follows:
 
 ######
 
+\* Gesture in opposite hand to switch gesture set of main hand during FBT Mode Complex.
+
 This mapping can be reconfigured under **Advanced Settings** using **Remap Control Gestures**
 
 </details>
@@ -1762,7 +1815,7 @@ This mapping can be reconfigured under **Advanced Settings** using **Remap Contr
 | `Head Control` | Attracts the ball to the anchor controlled by your head. |
 | `Chest Orbit` | Releases the ball and sets a firm limiter at a radius centered around your chest. |
 | `Primary Hand Control` | Attracts the ball to the anchor controlled by your primary hand. |
-| `Release Ball` | Throw the ball from its current position. / `Shoot Toggle` Shoot the ball in the direction your primary hand is pointing. |
+| `Release Ball` | Release the ball from its current position and maintain momentum. / `Shoot Toggle` Shoot the ball in the direction your primary hand is pointing. |
 | `Rigid Return` | Quickly recall the ball back to its primary hand anchor. |
 | `Secondary Hand Control` | Attracts the ball to the anchor controlled by your secondary hand. |
 | `Between Hand Control` | Attracts the ball to halfway point between your primary and secondary hand anchors. |
@@ -1787,7 +1840,31 @@ This mapping can be reconfigured under **Advanced Settings** using **Remap Contr
 
 <blockquote>
 
-**No**, as VRChat Quest does not support Physics Objects (Rigidbodies, Joints, Colliders) nor Constraints at this time. Other sprint joint ball systems shouldn't be compatible either.
+**No**, as [VRChat Quest Avatars](https://docs.vrchat.com/docs/quest-content-limitations) do not support Physics Objects (Rigidbodies, Joints, Colliders) nor Constraints at this time. Other sprint joint ball systems shouldn't be compatible either.
+
+</details>
+
+<details>
+
+  <summary> <strong> Is SleightlyBall compatible with Optimized Avatars? </strong> </summary>
+
+######
+
+<blockquote>
+
+**Depends**. The system itself only contributes to the Physics Rigidbodies count, and Physics Colliders if **World Physics** is enabled. This generates 3 - 5 Rigidbodies and 2 - 4 Colliders, which will pull your Avatar down to at least [Medium/Poor](https://docs.vrchat.com/docs/avatar-performance-ranking-system). Any other stat reductions are dependent on what balls you choose to use alongside this system.
+
+</details>
+
+<details>
+
+  <summary> <strong> Why can't other players see my SleightlyBall system in game / Why is it spazzing out?</strong> </summary>
+
+######
+
+<blockquote>
+
+This is a known issue if the other player has mods in VRChat known to affect safety/performance. For example, Advanced Safety for Melonloader, or AntiCrash on some private clients. This is mostly out of my control, as this has to do with the current VRChat World Physics fix, and will hopefully be resolved by the upcoming Avatar Dynamics update. Not my problem if people mod their game anyway.
 
 </details>
 
@@ -1799,7 +1876,7 @@ This mapping can be reconfigured under **Advanced Settings** using **Remap Contr
 
 <blockquote>
 
-If you have included World Physics, this may occur if you rearrange the layers in your Gesture Playable Layer of your Avatar Descriptor. If these layers' order is shifted, you must run **VRLabs' [Fix Order](https://github.com/VRLabs/VRChat-Avatars-3.0#fix-order)** script to resolve the sub-animator. Alternatively, you can re-generate **SleightlyBall**
+If you have included World Physics, this may occur if you rearrange the layers in your Gesture Playable Layer of your Avatar Descriptor. If these layers' order is shifted, you must run **VRLabs' [Fix Order](https://github.com/VRLabs/VRChat-Avatars-3.0#fix-order)** script to resolve the sub-animator. Alternatively, you can re-generate the **SleightlyBall** system.
 
 </details>
 
@@ -1817,6 +1894,32 @@ If you have included World Physics, this may occur if you rearrange the layers i
 
 <details>
 
+  <summary> <strong> How do I fix Disable Facial Anims to also disable non-blendshapes (Tongues/Eyes)? </strong> </summary>
+
+######
+
+<blockquote>
+
+Navigate through your project files to your Avatar's GeneratedSBResources folder and locate the animation clip for *Disable Facial Animations* in the Animations folder. You can add extra properties to this clip to account for resetting your non-blendshape animations.
+
+</details>
+
+<details>
+
+  <summary> <strong> How do I fly up/down in Pilot Mode? How do I reset the ball after using Pilot Mode? </strong> </summary>
+
+######
+
+<blockquote>
+
+If you do a **Thumbs Up gesture** in either hand while the puppet menu is open, the axes swap to XY controls, replacing Forward and Backward with Up and Down.
+
+Closing the puppet menu will have the ball maintain its position in world space, until you activate your **Rigid Return gesture** while the menu is closed.
+
+</details>
+
+<details>
+
   <summary> <strong> How do I export SleightlyBall with my commercial package? </strong> </summary>
 
 ######
@@ -1825,11 +1928,11 @@ If you have included World Physics, this may occur if you rearrange the layers i
 
 Assuming you have a **commercial license** for SleightlyBall, the script generates everything from scratch, making it easy to export without worrying about conflicting with other packages.
 
-You can find these generated resources at _Assets/JustSleightly/SleightlyBall/Generated Resources/_
+You can find these generated resources at ***Save File Path**/GeneratedSBResources/*. By default, this is *Assets/JustSleightly/SleightlyBall/GeneratedSBResources/*.
 
 The folder with your avatar's SleightlyBall under Generated Resources is the only one you need to export, aside from the files of the actual balls you used with the tool. The only exception to this is if you did not have an FX controller, Gesture controller, Expression Parameters, or Expressions Menu by default, in which those will be generated in your _Assets/_ folder.
 
-**You may not** export or redistribute the _SleightlyBall.dll_ file under _Assets/JustSleightly/SleightlyBall/Resources/. Please refer to the full Terms Of Use on my [store](https://store.sleightly.dev/).
+**You may not** export or redistribute the _SleightlyBall.dll_ file under *Assets/JustSleightly/SleightlyBall/Resources/*. Please refer to the full Terms Of Use on my [store](https://store.sleightly.dev/).
 
 </details>
 
@@ -1889,7 +1992,7 @@ Feel free to leave these in the support channel on [discord](https://discord.sle
 
 <blockquote>
 
-If you need help with using SleightlyBall, reach out in the support channel on [discord](https://discord.sleightly.dev/) so me or a community member can help. If you have private issues, open up a support ticket instead.
+If you need help with using SleightlyBall, reach out in the designated support channel on [discord](https://discord.sleightly.dev/) so me or a community member can help. If you have private issues involving purchase details, open up a support ticket instead.
 
 </details>
 
@@ -1897,7 +2000,7 @@ If you need help with using SleightlyBall, reach out in the support channel on [
 
 ## Special Thanks
 
-To my early alpha customers/testers for waiting up to nearly 11 months for this release - LeBUBBLES/ksivl/mango/KeepItBlank/Zen/Squirtles/PrimeSlav/Ember/Ronin
+To my early alpha customers/testers for waiting up to nearly 11 months for this release - LeBUBBLES/ksivl/mango/KeepItBlank/Zen/Squirtles/PrimeSlav/Ember/Ronin/IMPACT/Once
 
 **[PF_Cactus](https://discord.gg/FJKB768)** - For the original inspiration of making a custom inspector multi-step setup script with his original drone
 
