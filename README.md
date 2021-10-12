@@ -2,11 +2,13 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/stargazers) [![GitHub Tags](https://img.shields.io/github/tag/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/tags) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/JustSleightly/SleightlyBall?include_prereleases)](https://github.com/JustSleightly/SleightlyBall/releases) [![GitHub issues](https://img.shields.io/github/issues/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/issues) [![GitHub last commit](https://img.shields.io/github/last-commit/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/commits/main) [![Discord](https://img.shields.io/discord/780192344800362506)](https://discord.sleightly.dev/) ![Twitter Follow](https://img.shields.io/twitter/follow/SleightlyDev?style=social)
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20CJ%20Demo.gif)
 
 **SleightlyBall** is a "spring joint ball" like system built for **VRChat** users. It is the most customizable, modular, feature-rich ball system with an automatic setup tool, allowing for 2 step installation without any VRChat 3.0 or advanced Unity experience whatsoever.
 
 This is a **system** and does not include any balls in its own package. Please import your own.
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png)
 
 ### Features
 
@@ -68,28 +70,6 @@ This is a **system** and does not include any balls in its own package. Please i
 
 ### Importing The Prefab
 
-<details> 
-
-  <summary> <strong>  Activate License </strong> </summary>
-
-######
-
-<blockquote>
-
-Import the SleightlyBall unitypackage into your project, and click on the SleightlyBall.prefab at the default path *Assets/JustSleightly/SleightlyBall*. 
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab.gif)
-
-If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in [Discord](https://discord.sleightly.dev/).
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20License%20Activation.gif)
-
-</details>
-
 <details>
 
   <summary> <strong> Add to Scene </strong> </summary>
@@ -98,11 +78,19 @@ If you have never used this on this PC before, you will see a field labeled **En
 
 <blockquote>
 
-To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into the scene for Unity base scaling, then drag it onto your desired avatar. Once the prefab detects an Avatar Descriptor and Animator, the **Main Settings** will appear in the inspector.
+To add SleightlyBall to your scene, click on **JustSleightly** in the top toolbar, and click on the **SleightlyBall** menu option. You can also press **Alt + S** for *SleightlyBall*.
+
+This will add the installer onto the first active loaded Avatar Descriptor in the scene.
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab%20Placement.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20MenuItem%20Auto%20Avatar.gif)
+
+Alternatively, drag the SleightlyBall.prefab into the scene for Unity base scaling, then drag it onto your desired avatar. Once the prefab detects an Avatar Descriptor and Animator, the **Main Settings** will appear in the inspector.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab.gif)
 
 <details>
 
@@ -112,6 +100,18 @@ To prepare SleightlyBall for installation, drag the SleightlyBall.prefab into th
 
 <blockquote>
 
+If you have any GameObjects selected in the scene, clicking the Menu Item for SleightlyBall will search all selected objects and parents first for an Avatar Descriptor.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20MenuItem%20Avatar%20Deep.gif)
+
+If there are no active Avatar Descriptors found in the scene, the installer will be added to the base scene.
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20MenuItem%20No%20Avatar.gif)
+
 The prefab can be placed as any child of an Avatar Descriptor, and it will automatically reparent as a direct child of the Avatar Descriptor.
 
 ######
@@ -119,6 +119,22 @@ The prefab can be placed as any child of an Avatar Descriptor, and it will autom
 ![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab%20AutoPosition.gif)
 
 </details>
+
+</details>
+
+<details> 
+
+  <summary> <strong>  Activate License </strong> </summary>
+
+######
+
+<blockquote>
+
+If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Make sure you've validated your license key on the [Discord](https://discord.sleightly.dev/) server, then input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in [Discord](https://discord.sleightly.dev/).
+
+######
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20License%20Activation.gif)
 
 </details>
 
@@ -1891,6 +1907,20 @@ If you have included World Physics, this may occur if you rearrange the layers i
 <blockquote>
 
 **Yes**, expand the SB_SleightlyBall hierarchy until you reach the Left/Right Ball Modes. You can replace any child to the Ball Mode objects, just remember to leave those child objects enabled, as your animations toggle the Ball Modes on/off.
+
+</details>
+
+<details>
+
+  <summary> <strong> Can I add audio to the balls? </strong> </summary>
+
+######
+
+<blockquote>
+
+**Yes!** You can actually **shoot and throw audio sources** with this system! There is currently no built-in audio source generation, as I've long thought about implementing it but it gets extremely cluttered UI-wise given the multi-ball support already. The easiest way to add audio to your balls would be to add the audio source to the ball before you add it to the installer as an input. The audio sources will then toggle on automatically whenever you toggle that respective ball on.
+
+As for extending audio functionality, such as independently toggleable audio, controllable audio settings, etc, at the moment you will have to add those in yourself until there is enough demand for me to implement it. I have a UI in mind that wouldn't require any additional memory, but it wouldn't have as much customization as I'd prefer.
 
 </details>
 
