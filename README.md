@@ -8,6 +8,8 @@
 
 This is a **system** and does not include any balls in its own package. Please import your own.
 
+## Available now at [store.sleightly.dev](https://store.sleightly.dev/)!
+
 <img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20CJ%20Demo.gif" width="410" height="280"> <img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png" width="385" height="280">
 
 ### Features
