@@ -10,7 +10,7 @@ This is a **system** and does not include any balls in its own package. Please i
 
 ## Available now at [store.sleightly.dev](https://store.sleightly.dev/)!
 
-<img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20CJ%20Demo.gif" width="410" height="280"> <img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png" width="385" height="280">
+<img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20CJ%20Demo.gif" height="280"> <img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png" height="280">
 
 ### Features
 
@@ -43,8 +43,7 @@ This is a **system** and does not include any balls in its own package. Please i
 
 <h2> Showcase / Performance Reel </h3>
 
-[![SleightlyBall Showcase](http://img.youtube.com/vi/p-oQoq1jhgk/0.jpg)](http://www.youtube.com/watch?v=p-oQoq1jhgk "SleightlyBall Showcase")
-[![SleightlyBall Performance Reel](http://img.youtube.com/vi/FAZC2S2NiLU/0.jpg)](http://www.youtube.com/watch?v=FAZC2S2NiLU "SleightlyBall Performance Reel")
+[<img src="https://img.youtube.com/vi/p-oQoq1jhgk/0.jpg" width="410">](https://www.youtube.com/watch?v=p-oQoq1jhgk "SleightlyBall Showcase") [<img src="https://img.youtube.com/vi/FAZC2S2NiLU/0.jpg" width="410">](https://www.youtube.com/watch?v=FAZC2S2NiLU "SleightlyBall Performance Reel")
 
 <details> 
 
