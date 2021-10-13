@@ -2,13 +2,13 @@
 
 [![GitHub stars](https://img.shields.io/github/stars/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/stargazers) [![GitHub Tags](https://img.shields.io/github/tag/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/tags) [![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/JustSleightly/SleightlyBall?include_prereleases)](https://github.com/JustSleightly/SleightlyBall/releases) [![GitHub issues](https://img.shields.io/github/issues/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/issues) [![GitHub last commit](https://img.shields.io/github/last-commit/JustSleightly/SleightlyBall)](https://github.com/JustSleightly/SleightlyBall/commits/main) [![Discord](https://img.shields.io/discord/780192344800362506)](https://discord.sleightly.dev/) ![Twitter Follow](https://img.shields.io/twitter/follow/SleightlyDev?style=social)
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20CJ%20Demo.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Gumroad%20Showcase.gif)
 
 **SleightlyBall** is a "spring joint ball" like system built for **VRChat** users. It is the most customizable, modular, feature-rich ball system with an automatic setup tool, allowing for 2 step installation without any VRChat 3.0 or advanced Unity experience whatsoever.
 
 This is a **system** and does not include any balls in its own package. Please import your own.
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png)
+<img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20CJ%20Demo.gif" width="450" height="300"> <img src="https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Default%20Settings.png" width="410" height="300">
 
 ### Features
 
@@ -52,7 +52,7 @@ This is a **system** and does not include any balls in its own package. Please i
 
 <blockquote>
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Showcase.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Script%20Showcase.gif)
 
 </details>
 
