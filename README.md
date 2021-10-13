@@ -41,7 +41,7 @@ This is a **system** and does not include any balls in its own package. Please i
 
 ######
 
-<h2> Showcase / Performance Reel </h3>
+<h2 align = center> Showcase / Performance Reel </h2>
 
 [<img src="https://img.youtube.com/vi/p-oQoq1jhgk/0.jpg" width="410">](https://www.youtube.com/watch?v=p-oQoq1jhgk "SleightlyBall Showcase") [<img src="https://img.youtube.com/vi/FAZC2S2NiLU/0.jpg" width="410">](https://www.youtube.com/watch?v=FAZC2S2NiLU "SleightlyBall Performance Reel")
 
