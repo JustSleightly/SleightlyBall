@@ -39,6 +39,11 @@ This is a **system** and does not include any balls in its own package. Please i
 
 ######
 
+<h2 align=center> Showcase / Performance Reel </h3>
+
+[![SleightlyBall Showcase](http://img.youtube.com/vi/p-oQoq1jhgk/0.jpg)](http://www.youtube.com/watch?v=p-oQoq1jhgk "SleightlyBall Showcase")
+[![SleightlyBall Performance Reel](http://img.youtube.com/vi/FAZC2S2NiLU/0.jpg)](http://www.youtube.com/watch?v=FAZC2S2NiLU "SleightlyBall Performance Reel")
+
 <details> 
 
   <summary> <strong> Full Demo GIF </strong> </summary>
@@ -67,6 +72,10 @@ This is a **system** and does not include any balls in its own package. Please i
 ---
 
 # Installation
+
+### Unity Installation Guide Video
+
+[![SleightlyBall Unity Installation Guide](http://img.youtube.com/vi/JV56OLPQJi8/0.jpg)](http://www.youtube.com/watch?v=JV56OLPQJi8 "SleightlyBall Unity Installation Guide")
 
 ### Importing The Prefab
 
@@ -1787,6 +1796,10 @@ Once **Anchor Positioning** is finished, click **Complete Setup** to generate al
 ---
 
 # Usage
+
+### In-Game Usage Tutorial Video
+
+[![SleightlyBall In-Game Usage Tutorial](http://img.youtube.com/vi/XQh3cU5Ttt0/0.jpg)](http://www.youtube.com/watch?v=XQh3cU5Ttt0 "SleightlyBall In-Game Usage Tutorial")
 
 For information regarding menu options, please see **Additional Features** under **Main Settings** above.
 
