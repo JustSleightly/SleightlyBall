@@ -1896,7 +1896,7 @@ This mapping can be reconfigured under **Advanced Settings** using **Remap Contr
 
 <blockquote>
 
-This is a known issue if the other player has mods in VRChat. So far, I've confirmed and tested the AvatarHider mod to be one cause, but some clients with avatar hiding features work fine, so this is particular to just the MelonLoader standalone mod. There may be other mods that cause this issue. This is mostly out of my control, as this has to do with the current VRChat World Physics fix, and will hopefully be resolved by the upcoming Avatar Dynamics update. I'm slowly looking into the possibility of remedying it but don't be too hopeful since mods aren't technically my problem.
+This is a known issue if the other player has mods in VRChat. So far, I've confirmed and tested the AvatarHider mod to be one cause, but some clients with avatar hiding features work fine, so this is particular to just the MelonLoader standalone mod. There may be other mods that cause this issue. This is mostly out of my control, as this has to do with the current VRChat World Physics fix, and will hopefully be resolved by the upcoming Avatar Dynamics update. I'm slowly looking into the possibility of remedying it but don't be too hopeful since mods aren't technically my problem. If you or your friend have this issue and want to still use AvatarHider without this issue, you can rollback to [this](https://github.com/loukylor/VRC-Mods/releases/download/AH-1.2.6/AvatarHider.dll) version of AvatarHider, just make sure you don't have an automatic mod updater.
 
 </details>
 
