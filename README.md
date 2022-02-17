@@ -66,7 +66,7 @@ This is a **system** and does not include any balls in its own package. Please i
 	1. License keys can be purchased from my [store](https://store.sleightly.dev/).
 	2. Keys must be validated by joining my [discord](https://discord.sleightly.dev/) and opening a ticket with my automated discord bot.
 2. An active **internet connection** while in Unity in order to use the tool - cannot be used offline.
-3. Only compatible with Unity for **Windows** - not compatible with Unity for Mac/Linux at this time. **Windows 11 is not compatible at this time**.
+3. Only compatible with Unity for **Windows 10 or less** - not compatible with Unity for Mac/Linux at this time. **Windows 11 is not compatible at this time**.
 4. Compatible with both Unity 2018 and 2019.
 5. Pre-requisite import - [VRCSDK3](https://vrchat.com/home/download) of at least 2021 compatible with your Unity version.
 
