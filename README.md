@@ -330,7 +330,7 @@ Enable this feature to include three toggles to enable/disable ball collision, b
 
 <blockquote>
 
-Enabling World Physics adds to your Gesture Playable layer. If these layers' order is later shifted, you must run **VRLabs' [Fix Order](https://github.com/VRLabs/VRChat-Avatars-3.0#fix-order)** script to resolve the sub-animator.
+Enabling World Physics adds to your Gesture Playable layer. If these layers' order is later shifted, you must run **VRLabs' [Layer Weight Tool](https://github.com/VRLabs/Layer-Weight-Tool)** to resolve the sub-animator.
 
 Collision is off by default, due to ball collision's ability to affect world triggers (portals, distance-based mirrors, etc).
 
@@ -1908,7 +1908,7 @@ This is a known issue if the other player has mods in VRChat. So far, I've confi
 
 <blockquote>
 
-If you have included World Physics, this may occur if you rearrange the layers in your Gesture Playable Layer of your Avatar Descriptor. If these layers' order is shifted, you must run **VRLabs' [Fix Order](https://github.com/VRLabs/VRChat-Avatars-3.0#fix-order)** script to resolve the sub-animator. Alternatively, you can re-generate the **SleightlyBall** system.
+If you have included World Physics, this may occur if you rearrange the layers in your Gesture Playable Layer of your Avatar Descriptor. If these layers' order is shifted, you must run **VRLabs' [Layer Weight Tool](https://github.com/VRLabs/Layer-Weight-Tool)** to resolve the sub-animator. Alternatively, you can re-generate the **SleightlyBall** system.
 
 </details>
 
