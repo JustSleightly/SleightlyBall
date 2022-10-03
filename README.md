@@ -1920,7 +1920,7 @@ If you have included World Physics, this may occur if you rearrange the layers i
 
 <blockquote>
 
-**Yes**, expand the SB_SleightlyBall hierarchy until you reach the Left/Right Ball Modes. You can replace any child to the Ball Mode objects, just remember to leave those child objects enabled, as your animations toggle the Ball Modes on/off.
+**Yes**, expand the SB_SleightlyBall hierarchy until you reach the Left/Right Ball Modes. You can replace any child to the Ball Mode objects, just remember to leave those child objects enabled, as your animations toggle the Ball Modes on/off. You should also remove any pre-existing spring/configurable joints, rigidbodies, or sphere/box/capsule/mesh colliders on your balls that would usually be auto-removed by the SleightlyBall installer.
 
 </details>
 
