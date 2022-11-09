@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: SB_ToggleHUD Off
+  m_Name: ToggleHUD Off
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -21,8 +21,10 @@ AnimationClip:
   - curve:
     - time: 0
       value: {fileID: 0}
+    - time: 0.016666668
+      value: {fileID: 0}
     attribute: m_Materials.Array.data[0]
-    path: SB_path
+    path: SB_SleightlyBall/SB_Renderer
     classID: 137
     script: {fileID: 0}
   m_SampleRate: 60
@@ -33,7 +35,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 1569884986
+      path: 3411412273
       attribute: 0
       script: {fileID: 0}
       typeID: 137
@@ -41,12 +43,13 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 0}
+    - {fileID: 0}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.016666668
+    m_StopTime: 0.033333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
