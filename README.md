@@ -37,7 +37,7 @@ This is a **system** and does not include any balls in its own package. Please i
 | Specifications | Minimum | Default | Max | Unoptimized |
 | :--- | :--- | :--- | :--- | :--- |
 | `Memory` | 1 | 32 | 55 | 87 |
-| `Icons` | 2 | 33 | 55 | 54 |
+| `Icons` | 2 | 33 | 57 | 56 |
 | `FX Layers` | 5 | 43 | 77 | 55 |
 | `Animation Clips` | 14 | 103 | 156 | 142 |
 
@@ -75,7 +75,7 @@ This is a **system** and does not include any balls in its own package. Please i
     2. Keys must be validated by joining my [discord](https://discord.sleightly.dev/) and opening a ticket with my automated discord bot.
 3. An active **internet connection** while in Unity in order to use the tool - cannot be used offline.
 4. Only compatible with Unity for **Windows** - not compatible with Unity for Mac/Linux at this time.
-5. Pre-requisite import - [VRCSDK3](https://vrchat.com/home/download) of at least August 30th, 2022.
+5. Pre-requisite import - [VRChat Creator Companion SDK](https://vrchat.com/home/download) version `3.1.13` or newer.
 
 ---
 
@@ -101,16 +101,6 @@ To add SleightlyBall to your scene, click on **JustSleightly** in the top toolba
 
 This will add the installer onto the first active loaded Avatar Descriptor in the scene.
 
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20MenuItem%20Auto%20Avatar.gif)
-
-Alternatively, drag the SleightlyBall.prefab into the scene for Unity base scaling, then drag it onto your desired avatar. Once the prefab detects an Avatar Descriptor and Animator, the **Main Settings** will appear in the inspector.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab.gif)
-
 <details>
 
   <summary>Technical Details</summary>
@@ -121,21 +111,7 @@ Alternatively, drag the SleightlyBall.prefab into the scene for Unity base scali
 
 If you have any GameObjects selected in the scene, clicking the Menu Item for SleightlyBall will search all selected objects and parents first for an Avatar Descriptor.
 
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20MenuItem%20Avatar%20Deep.gif)
-
 If there are no active Avatar Descriptors found in the scene, the installer will be added to the base scene.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20MenuItem%20No%20Avatar.gif)
-
-The prefab can be placed as any child of an Avatar Descriptor, and it will automatically reparent as a direct child of the Avatar Descriptor.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Prefab%20AutoPosition.gif)
 
 </details>
 
@@ -149,11 +125,11 @@ The prefab can be placed as any child of an Avatar Descriptor, and it will autom
 
 <blockquote>
 
-If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Make sure you've validated your license key on the [Discord](https://discord.sleightly.dev/) server, then input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. To reset/change seats for this license, please see our automated ticketing system in [Discord](https://discord.sleightly.dev/).
+If you have never used this on this PC before, you will see a field labeled **Enter your license key**. Make sure you've validated your license key on the [Discord](https://discord.sleightly.dev/) server, then input your license key from your purchase and click activate. This is a one-time-use key that will authorize the current PC for future use of SleightlyBall. 
 
-######
+You will also be prompted to come up with a security question and password. These will be used if you ever need to reset/transfer your license, so please remember your selection. Please don't use any sensitive information for your responses.
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20License%20Activation.gif)
+If your license key is not working due to it already being in use, click the *Transfer License* option.
 
 </details>
 
@@ -197,6 +173,8 @@ Select the Hand Configuration to set up the SleightlyBall system.
 <blockquote>
 
 Use the +/- symbol to add/remove additional balls to the system, up to 8 balls. Drag in any GameObject/Prefab from your hierarchy or your project assets. Rearrange them by click/dragging into your preferred order.
+
+If you have an option for Individual/Shared control, please see the related section under [Animator Pseudo API](https://github.com/JustSleightly/SleightlyBall#animator-pseudo-api).
 
 ######
 
@@ -741,6 +719,8 @@ If your FX Animator Controller is set to one Write Defaults mode, the **Write De
 
 If your FX Animator Controller has a mix of Write Defaults On and Off, a warning will appear and the **Write Defaults** option will not be labeled with **(Auto)**. This option will be available to manually enable/disable, and the generated states will follow the manually set status.
 
+States with BlendTrees that are also set to Write Defaults On and have `(WD On)` in the name are omitted from the scan.
+
 </details>
 
 </details>
@@ -1143,18 +1123,6 @@ Saving some options may increase your required memory.
 
 ######
 
-<details>
-
-  <summary>Technical Details</summary>
-
-######
-
-<blockquote>
-
-This option is only visible if **Shoot Toggle** is enabled.
-
-</details>
-
 </details>
 
 <details>
@@ -1240,7 +1208,7 @@ Displays the Required Memory to generate, the Available Memory on the current Av
 <blockquote>
 
 ```math 
-TotalRequiredMemory = LocalSyncedMemory + NetworkSyncedMemory
+TotalRequiredMemory = LocalSyncedMemory + NetworkSyncedMemory + CustomBallMemory
 ```
 
 ######
@@ -1307,10 +1275,6 @@ Triggers if no Avatar Descriptor component can be detected in any parents of the
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20No%20Avatar%20Descriptor.png)
-
-######
-
 </details>
 
 ######
@@ -1324,10 +1288,6 @@ Triggers if no Avatar Descriptor component can be detected in any parents of the
 <blockquote>
 
 Triggers if no Animator component is found on the Avatar Descriptor GameObject.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20No%20Animator.png)
 
 ######
 
@@ -1347,10 +1307,6 @@ Triggers for various reason, likely due to going in/out of Play Mode, or sometim
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Interruption.png)
-
-######
-
 </details>
 
 ######
@@ -1364,10 +1320,6 @@ Triggers for various reason, likely due to going in/out of Play Mode, or sometim
 <blockquote>
 
 Triggers if a remnants of a previous SleightlyBall installation were detected. Please remove it from the Avatar to proceed using **Remove from Avatar**.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Previous%20Install.png)
 
 ######
 
@@ -1387,10 +1339,6 @@ Triggers if the Expressions Menu does not have enough available memory to satisf
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Insufficient%20Memory.png)
-
-######
-
 </details>
 
 ######
@@ -1407,10 +1355,6 @@ Triggers if the Expressions Menu in the Avatar Descriptor already has 8 controls
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Menu%20Space.png)
-
-######
-
 </details>
 
 ######
@@ -1424,10 +1368,6 @@ Triggers if the Expressions Menu in the Avatar Descriptor already has 8 controls
 <blockquote>
 
 Triggers if the Animator component on your Avatar Root does not have an Avatar mapped.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Animator%20No%20Avatar.png)
 
 ######
 
@@ -1451,67 +1391,19 @@ Triggers if the model's FBX is not set to Humanoid rig configuration.
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Humanoid.png)
-
-######
-
 </details>
 
 ######
 
 <details>
 
-  <summary> <strong> ERROR: Left Hand Not Mapped </strong> </summary>
+  <summary> <strong> ERROR: Chest Not Mapped </strong> </summary>
 
 ######
 
 <blockquote>
 
-Triggers if the model's humanoid rig configuration does not have the left hand mapped.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Left%20Hand.png)
-
-######
-
-</details>
-
-######
-
-<details>
-
-  <summary> <strong> ERROR: Right Hand Not Mapped </strong> </summary>
-
-######
-
-<blockquote>
-
-Triggers if the model's humanoid rig configuration does not have the right hand mapped.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Right%20Hand.png)
-
-######
-
-</details>
-
-######
-
-<details>
-
-  <summary> <strong> ERROR: Feet Not Mapped </strong> </summary>
-
-######
-
-<blockquote>
-
-Triggers if the model's humanoid rig configuration does not have both feet mapped, while **FBT Mode** is enabled.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20FBT%20Mapping.png)
+Triggers if the model's humanoid rig configuration does not have the chest mapped.
 
 ######
 
@@ -1531,10 +1423,6 @@ Triggers if no Viseme Mesh is detected on the Avatar Descriptor or if the Viseme
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Viseme%20Mesh.png)
-
-######
-
 </details>
 
 ######
@@ -1548,10 +1436,6 @@ Triggers if no Viseme Mesh is detected on the Avatar Descriptor or if the Viseme
 <blockquote>
 
 Triggers if multiple Ball Inputs have the same source GameObject, **Move Or Copy** is enabled, and those inputs are set to Move. The same GameObject cannot be moved to multiple locations at once.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Move%20Multiple.png)
 
 ######
 
@@ -1571,10 +1455,6 @@ Triggers if multiple Audios have duplicate names. Each audio requires a unique n
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Duplicate%20Audio.png)
-
-######
-
 </details>
 
 ######
@@ -1588,10 +1468,6 @@ Triggers if multiple Audios have duplicate names. Each audio requires a unique n
 <blockquote>
 
 Triggers if the Avatar is currently not at origin (0,0,0 Position and Rotation). If continued, the SleightlyBall system may spazz out for remote players.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Warning%20Origin.png)
 
 ######
 
@@ -1613,7 +1489,19 @@ Continuing will use whichever value of **Write Defaults** you set under **Advanc
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Warning%20Mixed%20Write%20Defaults.png)
+</details>
+
+######
+
+<details>
+
+  <summary> <strong> WARNING: The following ball inputs contain constraints </strong> </summary>
+
+######
+
+<blockquote>
+
+Triggers if any ball inputs contain constraint components. These may or may not function properly depending on if they were intended for use with SleightlyBall or not.
 
 ######
 
@@ -1630,10 +1518,6 @@ Continuing will use whichever value of **Write Defaults** you set under **Advanc
 <blockquote>
 
 Triggers if the FX Controller, Expression Parameters, or Expressions Menu in your Avatar Descriptor is either default or empty.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Warning%20Default%20Expressions.png)
 
 ######
 
@@ -1655,10 +1539,6 @@ Press OK to acknowledge this warning and stop disabling the Next Step button. If
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Warning%20Empty%20Ball%20Inputs.png)
-
-######
-
 </details>
 
 ######
@@ -1677,7 +1557,21 @@ Press OK to acknowledge this warning and stop disabling the Next Step button. If
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Warning%20Empty%20Audio%20Inputs.png)
+</details>
+
+######
+
+<details>
+
+  <summary> <strong> ERROR: Found an audio clip with load type 'Decompress On Load' </strong> </summary>
+
+######
+
+<blockquote>
+
+Triggers if any audio clips with load type 'Decompress On Load' don't have 'Load In Background' enabled. This is a VRCSDK error that will prevent upload of the Avatar until it is resolved
+
+Press `Fix Audio Clips` to enabled 'Load In Background' for those clips automatically.
 
 ######
 
@@ -1694,10 +1588,6 @@ Press OK to acknowledge this warning and stop disabling the Next Step button. If
 <blockquote>
 
 Triggers if your Avatar Descriptor has two FX Playable Layers. Pressing Fix will restore the Action Playable Layer for you, but you will need to re-populate any custom layers you had previously set here.
-
-######
-
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Error%20Double%20FX%20Layer%20Bug.png)
 
 ######
 
@@ -1789,19 +1679,47 @@ Dynamically displays the current Authorized User's discord name and license type
 
 <details>
 
-  <summary> <strong> Check For Updates </strong> </summary>
+  <summary> <strong> Check For Update </strong> </summary>
 
 ######
 
 <blockquote>
 
-Click the circular arrow next to the version number in the bottom left to check for newer versions of SleightlyBall. If a new version is detected, the arrow will turn into a red X and a pop-up window will prompt you to download it. Otherwise, the arrow will turn into a green checkmark.
+Click the three lines next to the version number in the bottom left to check for newer versions of HoloBadge. If a new version is detected, a pop-up window will point you to the changelog.
 
 This will automatically check the first time it is loaded per day.
 
 ######
 
-![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20Update%20Checker.gif)
+</details>
+
+<details>
+
+  <summary> <strong> Send Feedback </strong> </summary>
+
+######
+
+<blockquote>
+
+Click the three lines next to the version number in the bottom left to send feedback for HoloBadge straight from Unity.
+
+######
+
+</details>
+
+<details>
+
+  <summary> <strong> Verify </strong> </summary>
+
+######
+
+<blockquote>
+
+Click the three lines next to the version number in the bottom left to select when HoloBadge verifies authentication.
+
+On Display initiates authentication when the window is opened.
+
+On Project Load initiates authentication when the project is opened.
 
 ######
 
@@ -2015,7 +1933,7 @@ This option is only visible while editing the above steps.
 
 Deselect any blendshapes that should not be reset to their default values while using the SleightlyBall system, such as body blendshapes.
 
-Additional GameObjects that should be enabled/disabled with these blendshapes can be added at the bottom.
+Additional GameObjects that should be enabled/disabled during facial expressions (such as separate mesh lollipops/tongues/other accessories) can be added at the bottom.
 
 ######
 
@@ -2043,7 +1961,7 @@ Once **Anchor Positioning** is finished, click **Complete Setup** to generate al
 
 ### In-Game Usage Tutorial Video
 
-[![SleightlyBall In-Game Usage Tutorial](http://img.youtube.com/vi/XQh3cU5Ttt0/0.jpg)](http://www.youtube.com/watch?v=XQh3cU5Ttt0 "SleightlyBall In-Game Usage Tutorial")
+[![SleightlyBall In-Game Usage Tutorial](http://img.youtube.com/vi/XQh3cU5Ttt0/0.jpg)](https://youtu.be/XQh3cU5Ttt0 "SleightlyBall In-Game Usage Tutorial")
 
 For information regarding menu options, please see **Additional Features** under **Main Settings** above.
 
@@ -2063,7 +1981,7 @@ By default, the gesture control mapping is as follows:
 | `F2 Gesture Fist` | :white_square_button: | Head Control | Primary Foot | Primary Trigger* |
 | `F3 Gesture Open Hand` | :white_check_mark: | Chest Orbit | | |
 | `F4 Gesture Fingerpoint` | :white_check_mark: | Primary Hand Control | | |
-| `F5 Gesture Victory` | :white_square_button: | Release Ball | | |
+| `F5 Gesture Victory` | :white_check_mark: | Release Ball | | |
 | `F6 Gesture Rock n Roll` | :white_square_button: | Rigid Return | | |
 | `F7 Gesture Handgun` | :white_check_mark: | Secondary Hand Control | | |
 | `F8 Gesture Thumbs Up` | :white_square_button: | Between Hand Control | Secondary Foot | Secondary Trigger* |
@@ -2098,6 +2016,192 @@ This mapping can be reconfigured under **Advanced Settings** using **Remap Contr
 | `Secondary Foot Control` | `FBT Simple` Attracts the ball to the anchor controlled by your secondary foot. |
 | `Primary Trigger` | `FBT Complex` Holding this trigger in your opposite hand converts your primary hand gesture set into a primary foot centered one. |
 | `Secondary Trigger` | `FBT Complex` Holding this trigger in your opposite hand converts your primary hand gesture set into a secondary foot centered one. |
+
+######
+
+</details>
+
+---
+
+# Designing a Custom Ball for SleightlyBall
+
+SleightlyBall is designed to work with the majority of GameObjects, as it generates its own physics collision system independent of the ball inputs you use. 
+
+With that said, below are a few notes you may want to take into account when building your own ball, whether for yourself or to distribute to others.
+
+<details>
+
+  <summary> <strong> Structure of a Spring Joint Ball </strong> </summary>
+
+######
+
+<blockquote>
+
+When designing a spring joint ball for use with SleightlyBall, below are a few elements you may want to consider for a well-rounded feature set:
+
+1. Spawn Effects - Features that activate only when enabling the ball
+2. Idle Effects - Features that are always on and persist
+3. Trailing Effects - Features that may be always on but are heavily accentuated by movement
+4. Impact Effects - Features that activate upon impact with world collision
+5. Post-Impact Effects - Features that leave residual effects at collision points after impact such as decals
+
+Options 4 and 5 above can be tricky to set up without advanced Unity experience, as often times you'll be mixing particle collision with SleightlyBall's physics based collision. I personally use stop-action particle sub-animators to resolve the collision trigger spam.
+
+######
+
+</details>
+
+<details>
+
+  <summary> <strong> Usable Components </strong> </summary>
+
+######
+
+<blockquote>
+
+The SleightlyBall system handles the physics/movement of the ball inputs on its own, so the system is designed to work with most objects as long as they are largely static and unmoving on their own (such as the default Unity sphere). 
+
+As such, there are a few components to be careful of when creating your custom ball.
+
+- Rigidbodies and Joints (Spring/Configurable) are automatically removed during installation
+- Unity Colliders (Sphere/Box/Capsule/Mesh) are automatically removed during installation **if they are not set to IsTrigger**
+- Constraint components are **NOT** removed but may cause unintended behaviour **in some cases** such as
+  - Constraints that reference objects outside the ball or SleightlyBall system
+  - Constraints that are self-referenced for damping/spring behaviour and cause non-static movement
+- Avatar Descriptors on the ball root object are automatically removed during installation due to the [Animator Pseudo API](https://github.com/JustSleightly/SleightlyBall#animator-pseudo-api)
+  - Pipeline Managers are also removed from the ball root if an Avatar Descriptor is detected
+  - Animator components are also removed from the ball root if an Avatar Descriptor is detected
+
+######
+
+</details>
+
+## Animator Pseudo API
+
+For those who want to integrate custom animation systems on their ball without losing the functionality of SleightlyBall, this pseudo API provides additional tools to advanced Unity creators to facilitate the process!
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Gifs/SB%20API%20Highlight.gif)
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20Info%20API.png)
+
+To enable this functionality on your own custom ball, **create an empty GameObject as a new parent/root** to your custom ball and add a `VRCAvatarDescriptor`. SleightlyBall will automatically detect ball inputs with Avatar Descriptors and highlight green.
+
+<details>
+
+  <summary> <strong> Automatic 3.0 Merging </strong> </summary>
+
+######
+
+<blockquote>
+
+SleightlyBall will automatically merge in the FX Controller, Expressions Menu, and Expression Parameters from the Avatar Descriptor of the custom ball. There is no particular naming convention you need to follow.
+
+All parameters across all three files will be prefixed with `SB/` and the ball's index, such as `L1` for Left 1, to avoid conflicts between multiple custom balls in the same system. Native VRChat parameters and the VRLabs IsMirror parameter are ignored.
+
+All animation clips and expressions menu (and submenus) will be duplicated so that they are modified non-destructively.
+
+All animation clips will be repathed with their respective location in the SleightlyBall hierarchy as the new root. Your ball animations should be created with the `VRCAvatarDescriptor` as the root in order to be repathed correctly.
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20API%20Path.png)
+
+Please be mindful of expression parameter memory usage, as end users most often install balls to both hands rather than just one. See **Individual vs Shared Control** below.
+
+</details>
+
+<details>
+
+  <summary> <strong> Automatic Target Reparenting </strong> </summary>
+
+######
+
+<blockquote>
+
+SleightlyBall will automatically reparent certain GameObjects underneath the custom ball's Avatar Descriptor to the ball anchor targets around the armature, in case you need to use those targets for your own internal logic.
+
+Only GameObjects that are **direct children** to the Avatar Descriptor will be scanned.
+
+![](https://github.com/JustSleightly/SleightlyBall/raw/main/Documentation/Images/SB%20API%20Reparent.png)
+
+GameObjects must start with one of the below naming conventions in order to be reparented:
+
+| Naming Convention | Target Reparented To |
+| :------------- | :------------- |
+| `SB_PrimaryHand` | Primary Hand |
+| `SB_SecondaryHand` | Secondary Hand |
+| `SB_Chest` | Chest |
+| `SB_Head` | Head |
+| `SB_PrimaryFoot` | Primary Foot |
+| `SB_SecondaryFoot` | Secondary Foot |
+
+Since Primary/Secondary Foot are only available when FBT Mode is enabled in the installer by the end user, it is highly recommended to multi-condition your logic with the `SB/FBT Mode` bool parameter to prevent unintended behaviour.
+
+These targets are not intended to be used for animation clips themselves, but rather as component sources such as for constraints.
+
+Each reparented GameObject will have its name modified to include the index of the ball it's associated with.
+
+</details>
+
+<details>
+
+  <summary> <strong> Aliased Gesture Parameters </strong> </summary>
+
+######
+
+<blockquote>
+
+SleightlyBall offers two aliased parameters you can use in your custom ball's FX controller in place of VRChat's native GestureLeft/GestureRight parameters. 
+
+By using these parameters in your FX controller instead of VRChat's, you can accommodate for end users who remap their SleightlyBall gesture controls to different gestures using the installer. These should **only** be added to your controller and not to your Expression Parameters.
+
+`SB/Hidden` is a bool that is **true** when the ball is currently hidden by gesture via the **HideOnIdle** feature.
+
+`SB/Gesture` is an integer with values ranging from 0 to 15 and corresponds to each of the possible SleightlyBall gesture controls.
+
+SleightlyBall will automatically change `SB/Hidden` and `SB/Gesture` to `SB/HiddenLeft`/`SB/HiddenRight` and `SB/GestureLeft`/`SB/GestureRight` according to the mode the ball is installed to by the end user. You can also directly use the Left/Right variants if you need specific hand conditions.
+
+It is recommended to multi-condition all of your transitions using `SB/Gesture` with `SB/Hidden = false` so that they only activate while the ball is visible.
+
+*`SB/Gesture` is not properly supported with Shared Control (see below) and will default to SB/GestureLeft. Avoid using `SB/Gesture` on balls intended for Shared Control or inform your users accordingly.*
+
+| Int Value | Gesture Control | Feature Requirement |
+| :-------------: | :------------- | :------------- |
+| 0 | `Primary Hand Control` |  |
+| 1 | `Secondary Hand Control` |  |
+| 2 | `Head Control` |  |
+| 3 | `Chest Orbit` |  |
+| 4 | `Chest Constraint Control` | World Constraint |
+| 5 | `Release Ball` |  |
+| 6 | `Shoot Ball` | Shoot Toggle |
+| 7 | `Rigid Return` |  |
+| 8 | `Between Hand Control` |  |
+| 9 | `Primary Foot Control` | FBT Mode |
+| 10 | `Secondary Foot Control` | FBT Mode |
+| 11 | `Primary Foot Orbit` | FBT Mode: Complex |
+| 12 | `Secondary Foot Orbit` | FBT Mode: Complex |
+| 13 | `Primary Foot Rigid Return` | FBT Mode: Complex |
+| 14 | `Secondary Foot Rigid Return` | FBT Mode: Complex |
+| 15 | `Between Feet Control` | FBT Mode: Complex |
+
+######
+
+</details>
+
+<details>
+
+  <summary> <strong> Individual vs Shared Control </strong> </summary>
+
+######
+
+<blockquote>
+
+SleightlyBall offers a variety of ball configurations, including Left/Right/Both Hand configurations as well as **Separate Balls per Hand**.
+
+By default, SleightlyBall will merge all custom ball animation systems on an individual per-ball basis. In both hand configurations, this means the left and right hand ball will each have their own independent custom animation system that you can control individually.
+
+If you have the **Ball Configuration** set to *Both Hands* and **Separate Balls per Hand** is *disabled*, an option to select between `Individual Control` vs `Shared Control` appears. Selecting `Shared Control` will cause SleightlyBall to merge that ball's custom animation system in to affect both the left and right hand at the same time, and halving Expression Parameter memory used.
+
+Please note that these options are all-or-nothing for the entire animation system, and SleightlyBall does not support setting individual/shared control on a per-layer/parameter basis.
+
+It is recommended to add to your custom ball instructions/description whether or not your custom ball is compatible with `Shared Control`.
 
 ######
 
@@ -2231,7 +2335,7 @@ You can find these generated resources at `Save File Path/GeneratedSBResources/`
 
 The folder with your avatar's SleightlyBall under Generated Resources is the only one you need to export, aside from the files of the actual balls you used with the tool. The only exception to this is if you did not have an FX controller, Gesture controller, Expression Parameters, or Expressions Menu by default, in which those will be generated in your `Assets/` folder.
 
-**You may not** export or redistribute the _SleightlyBall.dll_ file under `Assets/JustSleightly/SleightlyBall/Resources/`. Please refer to the full Terms and Conditions on my [store](https://store.sleightly.dev/).
+**You may not** export or redistribute the _SleightlyBall.dll_ file and other contents under `Packages/JS - SleightlyBall/`. Please refer to the full Terms and Conditions on my [store](https://store.sleightly.dev/).
 
 </details>
 
@@ -2243,7 +2347,19 @@ The folder with your avatar's SleightlyBall under Generated Resources is the onl
 
 <blockquote>
 
-**Yes**, in the event you change hardware, you can open an automated Reset/Transfer License ticket on [discord](https://discord.sleightly.dev/). There is a cooldown period to prevent abuse, and these logs will be monitored for misuse. If you need to re-transfer sooner than this transfer period, open a support ticket on [discord](https://discord.sleightly.dev/).
+**Yes**, in the event you change hardware, you can use the **Transfer License** option when trying to verify your license key in Unity on the new hardware. This will require your license key, security question, and security answer. There is a cooldown period to prevent abuse, and these logs will be monitored for misuse. If you need to re-transfer sooner than this transfer period, open a support ticket on [discord](https://discord.sleightly.dev/).
+
+</details>
+
+<details>
+
+  <summary> <strong> Can I upgrade my personal license? </strong> </summary>
+
+######
+
+<blockquote>
+
+**Yes**, open a support ticket on [discord](https://discord.sleightly.dev/) and we can get that process started for you.
 
 </details>
 
